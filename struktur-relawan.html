@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -17,54 +18,254 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/pan-custom.css" rel="stylesheet">
     <style>
+        .desc-box {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            margin-bottom: 40px;
+        }
 
-        .desc-box { background:#fff; border-radius:15px; padding:30px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; margin-bottom:40px; }
-        .desc-box h4 { color:#0154a2; font-weight:700; font-size:17px; margin-bottom:6px; }
-        .desc-box p { font-size:14px; color:rgba(1,6,8,0.7); margin-bottom:0; }
+        .desc-box h4 {
+            color: #0154a2;
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
 
-        .tab-nav { display:flex; gap:8px; margin-bottom:30px; flex-wrap:wrap; }
-        .tab-btn { padding:10px 24px; border-radius:8px; border:2px solid #0154a2; background:transparent; color:#0154a2; font-weight:600; font-size:14px; cursor:pointer; transition:all 300ms ease; }
-        .tab-btn.active, .tab-btn:hover { background:#0154a2; color:#fff; }
-        .tab-panel { display:none; }
-        .tab-panel.active { display:block; }
+        .desc-box p {
+            font-size: 14px;
+            color: rgba(1, 6, 8, 0.7);
+            margin-bottom: 0;
+        }
+
+        .tab-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: 2px solid #0154a2;
+            background: transparent;
+            color: #0154a2;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: #0154a2;
+            color: #fff;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
 
         /* Korkab card */
-        .korkab-card { background:#fff; border-radius:15px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; overflow:hidden; display:flex; align-items:center; gap:30px; padding:30px; transition:all 500ms ease; }
-        .korkab-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
-        .korkab-card img { width:160px; height:160px; border-radius:15px; object-fit:cover; }
-        .korkab-info h3 { font-size:22px; font-weight:700; color:#04415f; margin-bottom:4px; }
-        .korkab-info .jabatan { color:#0154a2; font-weight:600; font-size:15px; margin-bottom:12px; }
-        .korkab-info .meta { font-size:13.5px; color:rgba(1,6,8,0.65); display:flex; flex-direction:column; gap:6px; }
-        .korkab-info .meta i { color:#0154a2; margin-right:6px; }
+        .korkab-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            transition: all 500ms ease;
+        }
+
+        .korkab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px;
+        }
+
+        .korkab-card img {
+            width: 160px;
+            height: 160px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .korkab-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #04415f;
+            margin-bottom: 4px;
+        }
+
+        .korkab-info .jabatan {
+            color: #0154a2;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .korkab-info .meta {
+            font-size: 13.5px;
+            color: rgba(1, 6, 8, 0.65);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .korkab-info .meta i {
+            color: #0154a2;
+            margin-right: 6px;
+        }
 
         /* Korcam cards */
-        .korcam-card { background:#fff; border-radius:15px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; overflow:hidden; transition:all 500ms ease; height:100%; }
-        .korcam-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
-        .korcam-card img { width:100%; height:200px; object-fit:cover; }
-        .korcam-card .korcam-body { padding:20px; }
-        .korcam-card h4 { font-size:17px; font-weight:700; color:#04415f; margin-bottom:4px; }
-        .korcam-card .kec-label { color:#0154a2; font-weight:600; font-size:13.5px; margin-bottom:10px; }
-        .korcam-card .meta-line { font-size:13px; color:rgba(1,6,8,0.6); display:flex; align-items:center; gap:5px; }
-        .korcam-card .meta-line i { color:#0154a2; }
+        .korcam-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            overflow: hidden;
+            transition: all 500ms ease;
+            height: 100%;
+        }
+
+        .korcam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px;
+        }
+
+        .korcam-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .korcam-card .korcam-body {
+            padding: 20px;
+        }
+
+        .korcam-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #04415f;
+            margin-bottom: 4px;
+        }
+
+        .korcam-card .kec-label {
+            color: #0154a2;
+            font-weight: 600;
+            font-size: 13.5px;
+            margin-bottom: 10px;
+        }
+
+        .korcam-card .meta-line {
+            font-size: 13px;
+            color: rgba(1, 6, 8, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .korcam-card .meta-line i {
+            color: #0154a2;
+        }
 
         /* Table */
-        .filter-bar { background:#fff; border-radius:15px; padding:16px 20px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; margin-bottom:20px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-        .filter-bar label { font-weight:600; color:#04415f; font-size:14px; }
-        .filter-bar select { border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:7px 12px; font-size:13px; min-width:200px; }
-        .tbl-box { background:#fff; border-radius:15px; padding:25px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; overflow-x:auto; }
-        .tbl { width:100%; border-collapse:collapse; }
-        .tbl th,.tbl td { padding:12px 14px; text-align:left; border-bottom:1px solid rgba(0,0,0,0.05); font-size:13.5px; }
-        .tbl th { background:rgba(1,84,162,0.06); color:#04415f; font-weight:600; white-space:nowrap; }
-        .tbl tr:hover td { background:rgba(1,84,162,0.03); }
-        .badge-aktif { background:#d1fae5; color:#065f46; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
-        .badge-nonaktif { background:#fee2e2; color:#991b1b; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+        .filter-bar {
+            background: #fff;
+            border-radius: 15px;
+            padding: 16px 20px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-bar label {
+            font-weight: 600;
+            color: #04415f;
+            font-size: 14px;
+        }
+
+        .filter-bar select {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 7px 12px;
+            font-size: 13px;
+            min-width: 200px;
+        }
+
+        .tbl-box {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            overflow-x: auto;
+        }
+
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tbl th,
+        .tbl td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 13.5px;
+        }
+
+        .tbl th {
+            background: rgba(1, 84, 162, 0.06);
+            color: #04415f;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tbl tr:hover td {
+            background: rgba(1, 84, 162, 0.03);
+        }
+
+        .badge-aktif {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-nonaktif {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
 
         @media(max-width:768px) {
-            .korkab-card { flex-direction:column; text-align:center; }
-            .korkab-card img { width:120px; height:120px; }
+            .korkab-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .korkab-card img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
+
 <body class="page">
 
     <header id="header" class="header d-flex align-items-center sticky-top">
@@ -109,9 +310,6 @@
                 <nav class="breadcrumbs" style="margin-bottom:15px;">
                     <ol style="list-style:none;padding:0;margin:0;display:flex;gap:10px;">
                         <li><a href="index.html">Beranda</a></li>
-                        <li style="color:rgba(255,255,255,0.5);">/</li>
-                        <li><a href="#">Struktur Relawan</a></li>
-                        <li style="color:rgba(255,255,255,0.5);">/</li>
                         <li class="current">Kordes, Korcam, &amp; Korkab</li>
                     </ol>
                 </nav>
@@ -124,9 +322,24 @@
 
                 <!-- Penjelasan Singkat -->
                 <div class="row gy-4 mb-5">
-                    <div class="col-lg-4"><div class="desc-box h-100"><h4><i class="bi bi-flag me-2"></i>Korkab</h4><p>Koordinator Kabupaten — penanggung jawab utama seluruh jaringan relawan di tingkat Kabupaten Probolinggo. Mengkoordinasikan strategi pemenangan dan konsolidasi antar kecamatan.</p></div></div>
-                    <div class="col-lg-4"><div class="desc-box h-100"><h4><i class="bi bi-pin-map me-2"></i>Korcam</h4><p>Koordinator Kecamatan — bertanggung jawab mengelola relawan di satu wilayah kecamatan, memastikan saksi terlatih, dan melaporkan data lapangan ke Korkab.</p></div></div>
-                    <div class="col-lg-4"><div class="desc-box h-100"><h4><i class="bi bi-house-door me-2"></i>Kordes</h4><p>Koordinator Desa — ujung tombak di tingkat desa/kelurahan, bertugas mobilisasi dukungan, pendataan warga, dan pengawalan suara di TPS masing-masing wilayah.</p></div></div>
+                    <div class="col-lg-4">
+                        <div class="desc-box h-100">
+                            <h4><i class="bi bi-flag me-2"></i>Korkab</h4>
+                            <p>Koordinator Kabupaten — penanggung jawab utama seluruh jaringan relawan di tingkat Kabupaten Probolinggo. Mengkoordinasikan strategi pemenangan dan konsolidasi antar kecamatan.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="desc-box h-100">
+                            <h4><i class="bi bi-pin-map me-2"></i>Korcam</h4>
+                            <p>Koordinator Kecamatan — bertanggung jawab mengelola relawan di satu wilayah kecamatan, memastikan saksi terlatih, dan melaporkan data lapangan ke Korkab.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="desc-box h-100">
+                            <h4><i class="bi bi-house-door me-2"></i>Kordes</h4>
+                            <p>Koordinator Desa — ujung tombak di tingkat desa/kelurahan, bertugas mobilisasi dukungan, pendataan warga, dan pengawalan suara di TPS masing-masing wilayah.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Tabs -->
@@ -138,30 +351,72 @@
 
                 <!-- Tab: Korkab -->
                 <div id="tab-korkab" class="tab-panel active">
-                    <div class="row justify-content-center"><div class="col-lg-8">
-                        <div class="korkab-card">
-                            <img src="assets/img/dummy.jpg" alt="Korkab">
-                            <div class="korkab-info">
-                                <h3>H. Moch. Sholeh, S.H.</h3>
-                                <div class="jabatan">Koordinator Kabupaten Probolinggo</div>
-                                <div class="meta">
-                                    <span><i class="bi bi-telephone"></i> +62 812 3456 7890</span>
-                                    <span><i class="bi bi-geo-alt"></i> Wilayah: Seluruh Kab. Probolinggo (24 Kecamatan)</span>
-                                    <span><i class="bi bi-people"></i> Membawahi 24 Korcam, 150+ Kordes</span>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="korkab-card">
+                                <img src="assets/img/dummy.jpg" alt="Korkab">
+                                <div class="korkab-info">
+                                    <h3>H. Moch. Sholeh, S.H.</h3>
+                                    <div class="jabatan">Koordinator Kabupaten Probolinggo</div>
+                                    <div class="meta">
+                                        <span><i class="bi bi-telephone"></i> +62 812 3456 7890</span>
+                                        <span><i class="bi bi-geo-alt"></i> Wilayah: Seluruh Kab. Probolinggo (24 Kecamatan)</span>
+                                        <span><i class="bi bi-people"></i> Membawahi 24 Korcam, 150+ Kordes</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div></div>
+                    </div>
                 </div>
 
                 <!-- Tab: Korcam -->
                 <div id="tab-korcam" class="tab-panel">
                     <div class="row gy-4">
-                        <div class="col-lg-4 col-md-6"><div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam"><div class="korcam-body"><h4>Achmad Basuki, S.Pd.</h4><div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Kraksaan</div><div class="meta-line"><i class="bi bi-telephone"></i> +62 813 5500 1122</div></div></div></div>
-                        <div class="col-lg-4 col-md-6"><div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam"><div class="korcam-body"><h4>Bambang Irawan</h4><div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Dringu</div><div class="meta-line"><i class="bi bi-telephone"></i> +62 857 3344 5566</div></div></div></div>
-                        <div class="col-lg-4 col-md-6"><div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam"><div class="korcam-body"><h4>Abdurrahman, M.M.</h4><div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Paiton</div><div class="meta-line"><i class="bi bi-telephone"></i> +62 819 7788 9900</div></div></div></div>
-                        <div class="col-lg-4 col-md-6"><div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam"><div class="korcam-body"><h4>Moh. Ridwan</h4><div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Gending</div><div class="meta-line"><i class="bi bi-telephone"></i> +62 822 1100 2233</div></div></div></div>
-                        <div class="col-lg-4 col-md-6"><div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam"><div class="korcam-body"><h4>Moh. Toha, S.Sos.</h4><div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Besuk</div><div class="meta-line"><i class="bi bi-telephone"></i> +62 838 6677 8899</div></div></div></div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam">
+                                <div class="korcam-body">
+                                    <h4>Achmad Basuki, S.Pd.</h4>
+                                    <div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Kraksaan</div>
+                                    <div class="meta-line"><i class="bi bi-telephone"></i> +62 813 5500 1122</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam">
+                                <div class="korcam-body">
+                                    <h4>Bambang Irawan</h4>
+                                    <div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Dringu</div>
+                                    <div class="meta-line"><i class="bi bi-telephone"></i> +62 857 3344 5566</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam">
+                                <div class="korcam-body">
+                                    <h4>Abdurrahman, M.M.</h4>
+                                    <div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Paiton</div>
+                                    <div class="meta-line"><i class="bi bi-telephone"></i> +62 819 7788 9900</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam">
+                                <div class="korcam-body">
+                                    <h4>Moh. Ridwan</h4>
+                                    <div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Gending</div>
+                                    <div class="meta-line"><i class="bi bi-telephone"></i> +62 822 1100 2233</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="korcam-card"><img src="assets/img/dummy.jpg" alt="Korcam">
+                                <div class="korcam-body">
+                                    <h4>Moh. Toha, S.Sos.</h4>
+                                    <div class="kec-label"><i class="bi bi-pin-map me-1"></i>Kec. Besuk</div>
+                                    <div class="meta-line"><i class="bi bi-telephone"></i> +62 838 6677 8899</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -179,8 +434,19 @@
                         </select>
                     </div>
                     <div class="tbl-box">
-                        <table class="tbl"><thead><tr><th>No</th><th>Nama</th><th>Desa</th><th>Kecamatan</th><th>No HP</th><th>Status</th></tr></thead>
-                        <tbody id="kordesBody"></tbody></table>
+                        <table class="tbl">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Desa</th>
+                                    <th>Kecamatan</th>
+                                    <th>No HP</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="kordesBody"></tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -193,16 +459,56 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center"><span class="sitename">DPD PAN PROBOLINGGO</span></a>
-                    <div class="footer-contact pt-3"><p>Jl. Raya Panglima Sudirman No. XX</p><p>Kota Probolinggo, Jawa Timur</p><p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p><p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p></div>
+                    <div class="footer-contact pt-3">
+                        <p>Jl. Raya Panglima Sudirman No. XX</p>
+                        <p>Kota Probolinggo, Jawa Timur</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p>
+                        <p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p>
+                    </div>
                     <div class="social-links d-flex mt-4"><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-youtube"></i></a></div>
                 </div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Navigasi</h4><ul><li><a href="index.html">Beranda</a></li><li><a href="visimisi.html">Visi &amp; Misi</a></li><li><a href="berita.html">Berita Terkini</a></li><li><a href="program.html">Program Kegiatan</a></li><li><a href="galeri.html">Galeri</a></li></ul></div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Data Pemilihan</h4><ul><li><a href="perolehan-suara.html">Perolehan Suara</a></li><li><a href="quick-count.html">Quick Count</a></li><li><a href="sebaran-tps.html">Sebaran TPS</a></li><li><a href="evaluasi-program.html">Evaluasi Program</a></li></ul></div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Struktur Relawan</h4><ul><li><a href="struktur-relawan.html">Kordes &amp; Korcam</a></li><li><a href="spesifikasi-gen.html">Spesifikasi Gen</a></li><li><a href="fraksi.html">Fraksi PAN</a></li></ul></div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Layanan</h4><ul><li><a href="#">Aspirasi Rakyat</a></li><li><a href="#">Pendaftaran Relawan</a></li><li><a href="#">Pusat Bantuan</a></li><li><a href="#">Privasi Data</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="visimisi.html">Visi &amp; Misi</a></li>
+                        <li><a href="berita.html">Berita Terkini</a></li>
+                        <li><a href="program.html">Program Kegiatan</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Data Pemilihan</h4>
+                    <ul>
+                        <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                        <li><a href="quick-count.html">Quick Count</a></li>
+                        <li><a href="sebaran-tps.html">Sebaran TPS</a></li>
+                        <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Struktur Relawan</h4>
+                    <ul>
+                        <li><a href="struktur-relawan.html">Kordes &amp; Korcam</a></li>
+                        <li><a href="spesifikasi-gen.html">Spesifikasi Gen</a></li>
+                        <li><a href="fraksi.html">Fraksi PAN</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Aspirasi Rakyat</a></li>
+                        <li><a href="#">Pendaftaran Relawan</a></li>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Privasi Data</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="container copyright text-center mt-4"><p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Partai Amanat Nasional</strong> <span>All Rights Reserved</span></p><div class="credits">Designed by <a href="https://www.instagram.com/hi.tech.software/" target="_blank">Hi Tech</a></div></div>
+        <div class="container copyright text-center mt-4">
+            <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Partai Amanat Nasional</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">Designed by <a href="https://www.instagram.com/hi.tech.software/" target="_blank">Hi Tech</a></div>
+        </div>
     </footer>
 
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -212,46 +518,47 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-    // Tab logic
-    function showTab(id) {
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById('tab-' + id).classList.add('active');
-        event.target.classList.add('active');
-    }
+        // Tab logic
+        function showTab(id) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
 
-    // Kordes data
-    const kordes = [
-        {nama:'Imam Syafi\'i',desa:'Dringu',kec:'Dringu',hp:'+62 812 1001 0001',aktif:true},
-        {nama:'Dewi Masruroh',desa:'Kalirejo',kec:'Dringu',hp:'+62 813 1001 0002',aktif:true},
-        {nama:'Nurhayati',desa:'Sumberdawesari',kec:'Dringu',hp:'+62 857 1001 0003',aktif:false},
-        {nama:'Sulistyowati',desa:'Kraksaan Wetan',kec:'Kraksaan',hp:'+62 812 2002 0001',aktif:true},
-        {nama:'Zainul Abidin',desa:'Semampir',kec:'Kraksaan',hp:'+62 819 2002 0002',aktif:true},
-        {nama:'Halimatus Sa\'diyah',desa:'Asembakor',kec:'Kraksaan',hp:'+62 822 2002 0003',aktif:true},
-        {nama:'Sholehah',desa:'Paiton',kec:'Paiton',hp:'+62 813 3003 0001',aktif:true},
-        {nama:'Budi Santoso',desa:'Sukodomol',kec:'Paiton',hp:'+62 857 3003 0002',aktif:true},
-        {nama:'Mashuri',desa:'Jabung Sisir',kec:'Paiton',hp:'+62 838 3003 0003',aktif:false},
-        {nama:'Fatimah Zahra',desa:'Gending',kec:'Gending',hp:'+62 812 4004 0001',aktif:true},
-        {nama:'Hadi Purnomo',desa:'Banjarsari',kec:'Gending',hp:'+62 819 4004 0002',aktif:true},
-        {nama:'Sumarni',desa:'Randumerak',kec:'Gending',hp:'+62 822 4004 0003',aktif:true},
-        {nama:'Syaiful Anwar',desa:'Alaspandan',kec:'Besuk',hp:'+62 813 5005 0001',aktif:true},
-        {nama:'Hamzah',desa:'Bago',kec:'Besuk',hp:'+62 857 5005 0002',aktif:true},
-        {nama:'Ridwan Kamil',desa:'Matekan',kec:'Besuk',hp:'+62 838 5005 0003',aktif:false},
-    ];
+        // Kordes data
+        const kordes = [
+            { nama: 'Imam Syafi\'i', desa: 'Dringu', kec: 'Dringu', hp: '+62 812 1001 0001', aktif: true },
+            { nama: 'Dewi Masruroh', desa: 'Kalirejo', kec: 'Dringu', hp: '+62 813 1001 0002', aktif: true },
+            { nama: 'Nurhayati', desa: 'Sumberdawesari', kec: 'Dringu', hp: '+62 857 1001 0003', aktif: false },
+            { nama: 'Sulistyowati', desa: 'Kraksaan Wetan', kec: 'Kraksaan', hp: '+62 812 2002 0001', aktif: true },
+            { nama: 'Zainul Abidin', desa: 'Semampir', kec: 'Kraksaan', hp: '+62 819 2002 0002', aktif: true },
+            { nama: 'Halimatus Sa\'diyah', desa: 'Asembakor', kec: 'Kraksaan', hp: '+62 822 2002 0003', aktif: true },
+            { nama: 'Sholehah', desa: 'Paiton', kec: 'Paiton', hp: '+62 813 3003 0001', aktif: true },
+            { nama: 'Budi Santoso', desa: 'Sukodomol', kec: 'Paiton', hp: '+62 857 3003 0002', aktif: true },
+            { nama: 'Mashuri', desa: 'Jabung Sisir', kec: 'Paiton', hp: '+62 838 3003 0003', aktif: false },
+            { nama: 'Fatimah Zahra', desa: 'Gending', kec: 'Gending', hp: '+62 812 4004 0001', aktif: true },
+            { nama: 'Hadi Purnomo', desa: 'Banjarsari', kec: 'Gending', hp: '+62 819 4004 0002', aktif: true },
+            { nama: 'Sumarni', desa: 'Randumerak', kec: 'Gending', hp: '+62 822 4004 0003', aktif: true },
+            { nama: 'Syaiful Anwar', desa: 'Alaspandan', kec: 'Besuk', hp: '+62 813 5005 0001', aktif: true },
+            { nama: 'Hamzah', desa: 'Bago', kec: 'Besuk', hp: '+62 857 5005 0002', aktif: true },
+            { nama: 'Ridwan Kamil', desa: 'Matekan', kec: 'Besuk', hp: '+62 838 5005 0003', aktif: false },
+        ];
 
-    function renderKordes(data) {
-        document.getElementById('kordesBody').innerHTML = data.map((r,i) =>
-            `<tr><td>${i+1}</td><td>${r.nama}</td><td>${r.desa}</td><td>${r.kec}</td><td>${r.hp}</td>
-            <td><span class="${r.aktif?'badge-aktif':'badge-nonaktif'}">${r.aktif?'Aktif':'Nonaktif'}</span></td></tr>`
-        ).join('');
-    }
+        function renderKordes(data) {
+            document.getElementById('kordesBody').innerHTML = data.map((r, i) =>
+                `<tr><td>${i + 1}</td><td>${r.nama}</td><td>${r.desa}</td><td>${r.kec}</td><td>${r.hp}</td>
+            <td><span class="${r.aktif ? 'badge-aktif' : 'badge-nonaktif'}">${r.aktif ? 'Aktif' : 'Nonaktif'}</span></td></tr>`
+            ).join('');
+        }
 
-    function filterKordes() {
-        const v = document.getElementById('kordesFilter').value;
-        renderKordes(v === 'all' ? kordes : kordes.filter(r => r.kec === v));
-    }
+        function filterKordes() {
+            const v = document.getElementById('kordesFilter').value;
+            renderKordes(v === 'all' ? kordes : kordes.filter(r => r.kec === v));
+        }
 
-    document.addEventListener('DOMContentLoaded', () => renderKordes(kordes));
+        document.addEventListener('DOMContentLoaded', () => renderKordes(kordes));
     </script>
 </body>
+
 </html>

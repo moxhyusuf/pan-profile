@@ -30,7 +30,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-
         /* Summary Cards */
         .stat-card {
             background: #ffffff;
@@ -106,7 +105,7 @@
 
         .table-source {
             font-size: 12px;
-            color: rgba(1,6,8,0.5);
+            color: rgba(1, 6, 8, 0.5);
             margin-top: 12px;
             font-style: italic;
         }
@@ -116,10 +115,11 @@
             border-collapse: collapse;
         }
 
-        .tbl th, .tbl td {
+        .tbl th,
+        .tbl td {
             padding: 13px 15px;
             text-align: left;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             font-size: 14px;
         }
 
@@ -130,7 +130,9 @@
             white-space: nowrap;
         }
 
-        .tbl tr:hover td { background-color: rgba(1, 84, 162, 0.04); }
+        .tbl tr:hover td {
+            background-color: rgba(1, 84, 162, 0.04);
+        }
 
         .kursi-badge {
             display: inline-block;
@@ -156,7 +158,10 @@
             margin-top: 30px;
         }
 
-        .footer-note i { font-size: 20px; color: #0154a2; }
+        .footer-note i {
+            font-size: 20px;
+            color: #0154a2;
+        }
     </style>
 </head>
 
@@ -213,9 +218,6 @@
                 <nav class="breadcrumbs" style="margin-bottom: 15px;">
                     <ol style="list-style:none; padding:0; margin:0; display:flex; gap:10px;">
                         <li><a href="index.html">Beranda</a></li>
-                        <li style="color:rgba(255,255,255,0.5);">/</li>
-                        <li><a href="#">Data Pemilihan</a></li>
-                        <li style="color:rgba(255,255,255,0.5);">/</li>
                         <li class="current">Perolehan Suara</li>
                     </ol>
                 </nav>
@@ -293,30 +295,222 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td>1</td><td>Bantaran</td><td>30.200</td><td>22.100</td><td>2.380</td><td>10.77%</td><td>—</td></tr>
-                                    <tr><td>2</td><td>Banyuanyar</td><td>38.500</td><td>28.400</td><td>3.200</td><td>11.27%</td><td>—</td></tr>
-                                    <tr><td>3</td><td>Besuk</td><td>42.100</td><td>31.500</td><td>4.920</td><td>15.62%</td><td><span class="kursi-badge">1</span></td></tr>
-                                    <tr><td>4</td><td>Dringu</td><td>45.000</td><td>33.200</td><td>3.750</td><td>11.30%</td><td>—</td></tr>
-                                    <tr><td>5</td><td>Gading</td><td>28.700</td><td>20.900</td><td>2.100</td><td>10.05%</td><td>—</td></tr>
-                                    <tr><td>6</td><td>Gending</td><td>32.400</td><td>24.100</td><td>2.540</td><td>10.54%</td><td>—</td></tr>
-                                    <tr><td>7</td><td>Kotaanyar</td><td>22.800</td><td>16.500</td><td>1.850</td><td>11.21%</td><td>—</td></tr>
-                                    <tr><td>8</td><td>Kraksaan</td><td>62.000</td><td>46.800</td><td>5.800</td><td>12.39%</td><td><span class="kursi-badge">1</span></td></tr>
-                                    <tr><td>9</td><td>Krejengan</td><td>35.500</td><td>26.200</td><td>3.100</td><td>11.83%</td><td>—</td></tr>
-                                    <tr><td>10</td><td>Krucil</td><td>28.000</td><td>20.300</td><td>1.950</td><td>9.61%</td><td>—</td></tr>
-                                    <tr><td>11</td><td>Kuripan</td><td>18.500</td><td>13.200</td><td>1.280</td><td>9.70%</td><td>—</td></tr>
-                                    <tr><td>12</td><td>Leces</td><td>52.000</td><td>39.100</td><td>4.500</td><td>11.51%</td><td><span class="kursi-badge">1</span></td></tr>
-                                    <tr><td>13</td><td>Lumbang</td><td>20.100</td><td>14.800</td><td>1.480</td><td>10.00%</td><td>—</td></tr>
-                                    <tr><td>14</td><td>Maron</td><td>44.600</td><td>33.500</td><td>3.820</td><td>11.40%</td><td>—</td></tr>
-                                    <tr><td>15</td><td>Pakuniran</td><td>31.200</td><td>23.000</td><td>2.680</td><td>11.65%</td><td>—</td></tr>
-                                    <tr><td>16</td><td>Paiton</td><td>68.000</td><td>51.200</td><td>6.100</td><td>11.91%</td><td><span class="kursi-badge">1</span></td></tr>
-                                    <tr><td>17</td><td>Pajarakan</td><td>33.000</td><td>24.500</td><td>2.850</td><td>11.63%</td><td>—</td></tr>
-                                    <tr><td>18</td><td>Sukapura</td><td>15.800</td><td>11.400</td><td>1.050</td><td>9.21%</td><td>—</td></tr>
-                                    <tr><td>19</td><td>Sumber</td><td>12.500</td><td>9.200</td><td>890</td><td>9.67%</td><td>—</td></tr>
-                                    <tr><td>20</td><td>Sumberasih</td><td>55.000</td><td>41.000</td><td>4.680</td><td>11.41%</td><td><span class="kursi-badge">1</span></td></tr>
-                                    <tr><td>21</td><td>Tegalsiwalan</td><td>29.800</td><td>22.000</td><td>2.500</td><td>11.36%</td><td>—</td></tr>
-                                    <tr><td>22</td><td>Tiris</td><td>26.000</td><td>19.200</td><td>1.820</td><td>9.48%</td><td>—</td></tr>
-                                    <tr><td>23</td><td>Tongas</td><td>50.000</td><td>37.500</td><td>4.250</td><td>11.33%</td><td><span class="kursi-badge">1</span></td></tr>
-                                    <tr><td>24</td><td>Wonomerto</td><td>28.300</td><td>20.800</td><td>2.448</td><td>11.77%</td><td>—</td></tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Bantaran</td>
+                                        <td>30.200</td>
+                                        <td>22.100</td>
+                                        <td>2.380</td>
+                                        <td>10.77%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Banyuanyar</td>
+                                        <td>38.500</td>
+                                        <td>28.400</td>
+                                        <td>3.200</td>
+                                        <td>11.27%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Besuk</td>
+                                        <td>42.100</td>
+                                        <td>31.500</td>
+                                        <td>4.920</td>
+                                        <td>15.62%</td>
+                                        <td><span class="kursi-badge">1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Dringu</td>
+                                        <td>45.000</td>
+                                        <td>33.200</td>
+                                        <td>3.750</td>
+                                        <td>11.30%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Gading</td>
+                                        <td>28.700</td>
+                                        <td>20.900</td>
+                                        <td>2.100</td>
+                                        <td>10.05%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Gending</td>
+                                        <td>32.400</td>
+                                        <td>24.100</td>
+                                        <td>2.540</td>
+                                        <td>10.54%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Kotaanyar</td>
+                                        <td>22.800</td>
+                                        <td>16.500</td>
+                                        <td>1.850</td>
+                                        <td>11.21%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Kraksaan</td>
+                                        <td>62.000</td>
+                                        <td>46.800</td>
+                                        <td>5.800</td>
+                                        <td>12.39%</td>
+                                        <td><span class="kursi-badge">1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Krejengan</td>
+                                        <td>35.500</td>
+                                        <td>26.200</td>
+                                        <td>3.100</td>
+                                        <td>11.83%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Krucil</td>
+                                        <td>28.000</td>
+                                        <td>20.300</td>
+                                        <td>1.950</td>
+                                        <td>9.61%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Kuripan</td>
+                                        <td>18.500</td>
+                                        <td>13.200</td>
+                                        <td>1.280</td>
+                                        <td>9.70%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Leces</td>
+                                        <td>52.000</td>
+                                        <td>39.100</td>
+                                        <td>4.500</td>
+                                        <td>11.51%</td>
+                                        <td><span class="kursi-badge">1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Lumbang</td>
+                                        <td>20.100</td>
+                                        <td>14.800</td>
+                                        <td>1.480</td>
+                                        <td>10.00%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Maron</td>
+                                        <td>44.600</td>
+                                        <td>33.500</td>
+                                        <td>3.820</td>
+                                        <td>11.40%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Pakuniran</td>
+                                        <td>31.200</td>
+                                        <td>23.000</td>
+                                        <td>2.680</td>
+                                        <td>11.65%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Paiton</td>
+                                        <td>68.000</td>
+                                        <td>51.200</td>
+                                        <td>6.100</td>
+                                        <td>11.91%</td>
+                                        <td><span class="kursi-badge">1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>Pajarakan</td>
+                                        <td>33.000</td>
+                                        <td>24.500</td>
+                                        <td>2.850</td>
+                                        <td>11.63%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>Sukapura</td>
+                                        <td>15.800</td>
+                                        <td>11.400</td>
+                                        <td>1.050</td>
+                                        <td>9.21%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>Sumber</td>
+                                        <td>12.500</td>
+                                        <td>9.200</td>
+                                        <td>890</td>
+                                        <td>9.67%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>Sumberasih</td>
+                                        <td>55.000</td>
+                                        <td>41.000</td>
+                                        <td>4.680</td>
+                                        <td>11.41%</td>
+                                        <td><span class="kursi-badge">1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>21</td>
+                                        <td>Tegalsiwalan</td>
+                                        <td>29.800</td>
+                                        <td>22.000</td>
+                                        <td>2.500</td>
+                                        <td>11.36%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td>
+                                        <td>Tiris</td>
+                                        <td>26.000</td>
+                                        <td>19.200</td>
+                                        <td>1.820</td>
+                                        <td>9.48%</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>23</td>
+                                        <td>Tongas</td>
+                                        <td>50.000</td>
+                                        <td>37.500</td>
+                                        <td>4.250</td>
+                                        <td>11.33%</td>
+                                        <td><span class="kursi-badge">1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>24</td>
+                                        <td>Wonomerto</td>
+                                        <td>28.300</td>
+                                        <td>20.800</td>
+                                        <td>2.448</td>
+                                        <td>11.77%</td>
+                                        <td>—</td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <p class="table-source"><i class="bi bi-info-circle me-1"></i>Sumber: Rekapitulasi Resmi KPU Kabupaten Probolinggo</p>
@@ -414,16 +608,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const parties = [
-                { name: 'PKB',       votes: 142500, color: '#009933' },
-                { name: 'Gerindra',  votes: 118200, color: '#CC0000' },
-                { name: 'PAN',       votes: 92418,  color: '#0154a2' },
-                { name: 'PDIP',      votes: 88600,  color: '#ED1C24' },
-                { name: 'Golkar',    votes: 74300,  color: '#FFCC00' },
-                { name: 'NasDem',    votes: 62100,  color: '#1E3D8F' },
-                { name: 'PKS',       votes: 55800,  color: '#1E7C45' },
-                { name: 'Demokrat',  votes: 48200,  color: '#003399' },
-                { name: 'PPP',       votes: 32400,  color: '#006600' },
-                { name: 'Lainnya',   votes: 34000,  color: '#aaaaaa' },
+                { name: 'PKB', votes: 142500, color: '#009933' },
+                { name: 'Gerindra', votes: 118200, color: '#CC0000' },
+                { name: 'PAN', votes: 92418, color: '#0154a2' },
+                { name: 'PDIP', votes: 88600, color: '#ED1C24' },
+                { name: 'Golkar', votes: 74300, color: '#FFCC00' },
+                { name: 'NasDem', votes: 62100, color: '#1E3D8F' },
+                { name: 'PKS', votes: 55800, color: '#1E7C45' },
+                { name: 'Demokrat', votes: 48200, color: '#003399' },
+                { name: 'PPP', votes: 32400, color: '#006600' },
+                { name: 'Lainnya', votes: 34000, color: '#aaaaaa' },
             ];
 
             const ctx = document.getElementById('donutChart').getContext('2d');
@@ -468,4 +662,5 @@
         });
     </script>
 </body>
+
 </html>

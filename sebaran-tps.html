@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -17,34 +18,153 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/pan-custom.css" rel="stylesheet">
     <style>
+        .sum-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 24px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            border-left: 5px solid #0154a2;
+            transition: all 500ms ease;
+            height: 100%;
+        }
 
-        .sum-card { background:#fff; border-radius:15px; padding:24px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; border-left:5px solid #0154a2; transition:all 500ms ease; height:100%; }
-        .sum-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
-        .sum-card .sc-icon { font-size:34px; color:#0154a2; margin-bottom:10px; }
-        .sum-card .sc-val { font-size:26px; font-weight:700; color:#04415f; }
-        .sum-card .sc-lbl { font-size:13px; color:rgba(1,6,8,0.6); }
+        .sum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px;
+        }
 
-        .filter-bar { background:#fff; border-radius:15px; padding:20px 25px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; margin-bottom:30px; display:flex; align-items:center; gap:15px; flex-wrap:wrap; }
-        .filter-bar label { font-weight:600; color:#04415f; white-space:nowrap; }
-        .filter-bar select { border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:8px 14px; font-size:14px; min-width:220px; }
+        .sum-card .sc-icon {
+            font-size: 34px;
+            color: #0154a2;
+            margin-bottom: 10px;
+        }
 
-        .tbl-box { background:#fff; border-radius:15px; padding:25px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; overflow-x:auto; }
-        .tbl { width:100%; border-collapse:collapse; }
-        .tbl th,.tbl td { padding:12px 14px; text-align:left; border-bottom:1px solid rgba(0,0,0,0.05); font-size:13.5px; }
-        .tbl th { background:rgba(1,84,162,0.06); color:#04415f; font-weight:600; white-space:nowrap; }
-        .tbl tr:hover td { background:rgba(1,84,162,0.03); }
+        .sum-card .sc-val {
+            font-size: 26px;
+            font-weight: 700;
+            color: #04415f;
+        }
 
-        .badge-ok { background:#d1fae5; color:#065f46; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
-        .badge-no { background:#fee2e2; color:#991b1b; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+        .sum-card .sc-lbl {
+            font-size: 13px;
+            color: rgba(1, 6, 8, 0.6);
+        }
 
-        .kec-card { background:#fff; border-radius:15px; padding:22px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; transition:all 500ms ease; }
-        .kec-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
-        .kec-card h4 { font-size:17px; font-weight:700; color:#04415f; margin-bottom:12px; }
-        .kec-card .kec-stat { display:flex; justify-content:space-between; font-size:13px; color:rgba(1,6,8,0.7); padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.04); }
-        .kec-card .kec-stat:last-child { border-bottom:none; }
-        .kec-card .kec-stat strong { color:#0154a2; }
+        .filter-bar {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px 25px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-bar label {
+            font-weight: 600;
+            color: #04415f;
+            white-space: nowrap;
+        }
+
+        .filter-bar select {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 14px;
+            min-width: 220px;
+        }
+
+        .tbl-box {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            overflow-x: auto;
+        }
+
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tbl th,
+        .tbl td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 13.5px;
+        }
+
+        .tbl th {
+            background: rgba(1, 84, 162, 0.06);
+            color: #04415f;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tbl tr:hover td {
+            background: rgba(1, 84, 162, 0.03);
+        }
+
+        .badge-ok {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-no {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .kec-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 22px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px;
+            transition: all 500ms ease;
+        }
+
+        .kec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px;
+        }
+
+        .kec-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #04415f;
+            margin-bottom: 12px;
+        }
+
+        .kec-card .kec-stat {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(1, 6, 8, 0.7);
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .kec-card .kec-stat:last-child {
+            border-bottom: none;
+        }
+
+        .kec-card .kec-stat strong {
+            color: #0154a2;
+        }
     </style>
 </head>
+
 <body class="page">
 
     <header id="header" class="header d-flex align-items-center sticky-top">
@@ -89,10 +209,7 @@
                 <nav class="breadcrumbs" style="margin-bottom:15px;">
                     <ol style="list-style:none;padding:0;margin:0;display:flex;gap:10px;">
                         <li><a href="index.html">Beranda</a></li>
-                        <li style="color:rgba(255,255,255,0.5);">/</li>
-                        <li><a href="#">Data Pemilihan</a></li>
-                        <li style="color:rgba(255,255,255,0.5);">/</li>
-                        <li class="current">Sebaran TPS</li>
+                        <li class="current">Sebaran Daerah TPS Probolinggo</li>
                     </ol>
                 </nav>
                 <h1 style="margin:0;font-size:32px;font-weight:700;color:white;">Sebaran Daerah TPS Probolinggo</h1>
@@ -104,10 +221,34 @@
 
                 <!-- Summary Cards -->
                 <div class="row gy-4 mb-5">
-                    <div class="col-lg-3 col-md-6"><div class="sum-card"><div class="sc-icon"><i class="bi bi-building"></i></div><div class="sc-val">1.200</div><div class="sc-lbl">Total TPS se-Probolinggo</div></div></div>
-                    <div class="col-lg-3 col-md-6"><div class="sum-card"><div class="sc-icon"><i class="bi bi-people-fill"></i></div><div class="sc-val">1.080</div><div class="sc-lbl">Total Saksi PAN Bertugas</div></div></div>
-                    <div class="col-lg-3 col-md-6"><div class="sum-card"><div class="sc-icon"><i class="bi bi-check2-circle"></i></div><div class="sc-val">42 / 50</div><div class="sc-lbl">TPS Terpantau / Total (Sample)</div></div></div>
-                    <div class="col-lg-3 col-md-6"><div class="sum-card"><div class="sc-icon"><i class="bi bi-geo-alt-fill"></i></div><div class="sc-val">Besuk</div><div class="sc-lbl">Kecamatan Suara Tertinggi</div></div></div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="sum-card">
+                            <div class="sc-icon"><i class="bi bi-building"></i></div>
+                            <div class="sc-val">1.200</div>
+                            <div class="sc-lbl">Total TPS se-Probolinggo</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="sum-card">
+                            <div class="sc-icon"><i class="bi bi-people-fill"></i></div>
+                            <div class="sc-val">1.080</div>
+                            <div class="sc-lbl">Total Saksi PAN Bertugas</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="sum-card">
+                            <div class="sc-icon"><i class="bi bi-check2-circle"></i></div>
+                            <div class="sc-val">42 / 50</div>
+                            <div class="sc-lbl">TPS Terpantau / Total (Sample)</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="sum-card">
+                            <div class="sc-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div class="sc-val">Besuk</div>
+                            <div class="sc-lbl">Kecamatan Suara Tertinggi</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Filter -->
@@ -124,16 +265,32 @@
                 </div>
 
                 <!-- Tabel Sebaran -->
-                <div class="section-title"><h2>Detail Sebaran TPS</h2><p>Data saksi dan pemantauan TPS per desa di masing-masing kecamatan</p></div>
+                <div class="section-title">
+                    <h2>Detail Sebaran TPS</h2>
+                    <p>Data saksi dan pemantauan TPS per desa di masing-masing kecamatan</p>
+                </div>
                 <div class="tbl-box mb-5">
                     <table class="tbl">
-                        <thead><tr><th>No</th><th>Kecamatan</th><th>Desa</th><th>No TPS</th><th>Nama Saksi</th><th>Status</th><th>Suara PAN</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kecamatan</th>
+                                <th>Desa</th>
+                                <th>No TPS</th>
+                                <th>Nama Saksi</th>
+                                <th>Status</th>
+                                <th>Suara PAN</th>
+                            </tr>
+                        </thead>
                         <tbody id="tpsBody"></tbody>
                     </table>
                 </div>
 
                 <!-- Ringkasan Per Kecamatan -->
-                <div class="section-title"><h2>Ringkasan Per Kecamatan</h2><p>Ikhtisar jumlah TPS, saksi aktif, dan suara PAN di kecamatan sample</p></div>
+                <div class="section-title">
+                    <h2>Ringkasan Per Kecamatan</h2>
+                    <p>Ikhtisar jumlah TPS, saksi aktif, dan suara PAN di kecamatan sample</p>
+                </div>
                 <div class="row gy-4" id="kecCards"></div>
 
             </div>
@@ -146,16 +303,50 @@
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center"><span class="sitename">DPD PAN PROBOLINGGO</span></a>
                     <div class="footer-contact pt-3">
-                        <p>Jl. Raya Panglima Sudirman No. XX</p><p>Kota Probolinggo, Jawa Timur</p>
+                        <p>Jl. Raya Panglima Sudirman No. XX</p>
+                        <p>Kota Probolinggo, Jawa Timur</p>
                         <p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p>
                         <p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p>
                     </div>
                     <div class="social-links d-flex mt-4"><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-youtube"></i></a></div>
                 </div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Navigasi</h4><ul><li><a href="index.html">Beranda</a></li><li><a href="visimisi.html">Visi &amp; Misi</a></li><li><a href="berita.html">Berita Terkini</a></li><li><a href="program.html">Program Kegiatan</a></li><li><a href="galeri.html">Galeri</a></li></ul></div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Data Pemilihan</h4><ul><li><a href="perolehan-suara.html">Perolehan Suara</a></li><li><a href="quick-count.html">Quick Count</a></li><li><a href="sebaran-tps.html">Sebaran TPS</a></li><li><a href="evaluasi-program.html">Evaluasi Program</a></li></ul></div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Struktur Relawan</h4><ul><li><a href="struktur-relawan.html">Kordes &amp; Korcam</a></li><li><a href="struktur-relawan.html">Korkab</a></li><li><a href="spesifikasi-gen.html">Spesifikasi Gen</a></li><li><a href="fraksi.html">Fraksi PAN</a></li></ul></div>
-                <div class="col-lg-2 col-md-3 footer-links"><h4>Layanan</h4><ul><li><a href="#">Aspirasi Rakyat</a></li><li><a href="#">Pendaftaran Relawan</a></li><li><a href="#">Pusat Bantuan</a></li><li><a href="#">Privasi Data</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="visimisi.html">Visi &amp; Misi</a></li>
+                        <li><a href="berita.html">Berita Terkini</a></li>
+                        <li><a href="program.html">Program Kegiatan</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Data Pemilihan</h4>
+                    <ul>
+                        <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                        <li><a href="quick-count.html">Quick Count</a></li>
+                        <li><a href="sebaran-tps.html">Sebaran TPS</a></li>
+                        <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Struktur Relawan</h4>
+                    <ul>
+                        <li><a href="struktur-relawan.html">Kordes &amp; Korcam</a></li>
+                        <li><a href="struktur-relawan.html">Korkab</a></li>
+                        <li><a href="spesifikasi-gen.html">Spesifikasi Gen</a></li>
+                        <li><a href="fraksi.html">Fraksi PAN</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Aspirasi Rakyat</a></li>
+                        <li><a href="#">Pendaftaran Relawan</a></li>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Privasi Data</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container copyright text-center mt-4">
@@ -171,97 +362,98 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-    const tpsData = [
-        // Dringu (10 TPS)
-        {kec:'Dringu',desa:'Kalirejo',noTps:'001',saksi:'Ahmad Fauzi',status:true,suara:85},
-        {kec:'Dringu',desa:'Kalirejo',noTps:'002',saksi:'Siti Aminah',status:true,suara:72},
-        {kec:'Dringu',desa:'Ngepoh',noTps:'003',saksi:'Moh. Hasan',status:true,suara:91},
-        {kec:'Dringu',desa:'Ngepoh',noTps:'004',saksi:'Sulaimah',status:false,suara:0},
-        {kec:'Dringu',desa:'Sumberdawesari',noTps:'005',saksi:'Bambang Irawan',status:true,suara:68},
-        {kec:'Dringu',desa:'Sumberdawesari',noTps:'006',saksi:'Nurhayati',status:true,suara:77},
-        {kec:'Dringu',desa:'Watuwungkuk',noTps:'007',saksi:'Abd. Ghofur',status:true,suara:63},
-        {kec:'Dringu',desa:'Watuwungkuk',noTps:'008',saksi:'Rudi Hartono',status:false,suara:0},
-        {kec:'Dringu',desa:'Dringu',noTps:'009',saksi:'Imam Syafi\'i',status:true,suara:95},
-        {kec:'Dringu',desa:'Dringu',noTps:'010',saksi:'Dewi Masruroh',status:true,suara:81},
-        // Gending (9 TPS)
-        {kec:'Gending',desa:'Gending',noTps:'001',saksi:'Moh. Ridwan',status:true,suara:78},
-        {kec:'Gending',desa:'Gending',noTps:'002',saksi:'Fatimah Zahra',status:true,suara:65},
-        {kec:'Gending',desa:'Pesisir',noTps:'003',saksi:'Lukman Hakim',status:false,suara:0},
-        {kec:'Gending',desa:'Pesisir',noTps:'004',saksi:'Samsul Arifin',status:true,suara:88},
-        {kec:'Gending',desa:'Banjarsari',noTps:'005',saksi:'Nur Aini',status:true,suara:54},
-        {kec:'Gending',desa:'Banjarsari',noTps:'006',saksi:'Hadi Purnomo',status:true,suara:71},
-        {kec:'Gending',desa:'Randumerak',noTps:'007',saksi:'Sumarni',status:true,suara:82},
-        {kec:'Gending',desa:'Randumerak',noTps:'008',saksi:'Eko Prasetyo',status:true,suara:59},
-        {kec:'Gending',desa:'Pajurangan',noTps:'009',saksi:'Mulyadi',status:false,suara:0},
-        // Kraksaan (12 TPS)
-        {kec:'Kraksaan',desa:'Kraksaan Wetan',noTps:'001',saksi:'Achmad Basuki',status:true,suara:102},
-        {kec:'Kraksaan',desa:'Kraksaan Wetan',noTps:'002',saksi:'Sulistyowati',status:true,suara:94},
-        {kec:'Kraksaan',desa:'Kraksaan Wetan',noTps:'003',saksi:'Moch. Ali Wafa',status:true,suara:87},
-        {kec:'Kraksaan',desa:'Kraksaan Kulon',noTps:'004',saksi:'Endang Puji R.',status:true,suara:115},
-        {kec:'Kraksaan',desa:'Kraksaan Kulon',noTps:'005',saksi:'Usman Effendi',status:false,suara:0},
-        {kec:'Kraksaan',desa:'Sidopekso',noTps:'006',saksi:'Robiatul Adawiyah',status:true,suara:76},
-        {kec:'Kraksaan',desa:'Sidopekso',noTps:'007',saksi:'Sugeng Riyadi',status:true,suara:98},
-        {kec:'Kraksaan',desa:'Semampir',noTps:'008',saksi:'Zainul Abidin',status:true,suara:83},
-        {kec:'Kraksaan',desa:'Semampir',noTps:'009',saksi:'Lilik Mulyani',status:true,suara:91},
-        {kec:'Kraksaan',desa:'Asembakor',noTps:'010',saksi:'Dwi Cahyono',status:true,suara:69},
-        {kec:'Kraksaan',desa:'Asembakor',noTps:'011',saksi:'Halimatus Sa\'diyah',status:true,suara:108},
-        {kec:'Kraksaan',desa:'Rangkang',noTps:'012',saksi:'Saiful Bahri',status:false,suara:0},
-        // Paiton (10 TPS)
-        {kec:'Paiton',desa:'Paiton',noTps:'001',saksi:'Abdurrahman',status:true,suara:92},
-        {kec:'Paiton',desa:'Paiton',noTps:'002',saksi:'Sholehah',status:true,suara:78},
-        {kec:'Paiton',desa:'Sukodomol',noTps:'003',saksi:'Budi Santoso',status:true,suara:105},
-        {kec:'Paiton',desa:'Sukodomol',noTps:'004',saksi:'Khoirul Umam',status:false,suara:0},
-        {kec:'Paiton',desa:'Bhinneka',noTps:'005',saksi:'Maisaroh',status:true,suara:67},
-        {kec:'Paiton',desa:'Bhinneka',noTps:'006',saksi:'Totok Hariyanto',status:true,suara:89},
-        {kec:'Paiton',desa:'Jabung Sisir',noTps:'007',saksi:'Siti Khodijah',status:true,suara:73},
-        {kec:'Paiton',desa:'Jabung Sisir',noTps:'008',saksi:'Mashuri',status:true,suara:96},
-        {kec:'Paiton',desa:'Plampang',noTps:'009',saksi:'Agus Salim',status:true,suara:84},
-        {kec:'Paiton',desa:'Plampang',noTps:'010',saksi:'Rukmini',status:false,suara:0},
-        // Besuk (9 TPS)
-        {kec:'Besuk',desa:'Besuk',noTps:'001',saksi:'Moh. Toha',status:true,suara:118},
-        {kec:'Besuk',desa:'Besuk',noTps:'002',saksi:'Ummi Kultsum',status:true,suara:97},
-        {kec:'Besuk',desa:'Alaspandan',noTps:'003',saksi:'Syaiful Anwar',status:true,suara:132},
-        {kec:'Besuk',desa:'Alaspandan',noTps:'004',saksi:'Nur Halimah',status:true,suara:104},
-        {kec:'Besuk',desa:'Sindetanyar',noTps:'005',saksi:'Kusairi',status:false,suara:0},
-        {kec:'Besuk',desa:'Sindetanyar',noTps:'006',saksi:'Fitriyah',status:true,suara:89},
-        {kec:'Besuk',desa:'Bago',noTps:'007',saksi:'Hamzah',status:true,suara:110},
-        {kec:'Besuk',desa:'Bago',noTps:'008',saksi:'Aisyah Dewi',status:true,suara:95},
-        {kec:'Besuk',desa:'Matekan',noTps:'009',saksi:'Ridwan Kamil',status:true,suara:121}
-    ];
+        const tpsData = [
+            // Dringu (10 TPS)
+            { kec: 'Dringu', desa: 'Kalirejo', noTps: '001', saksi: 'Ahmad Fauzi', status: true, suara: 85 },
+            { kec: 'Dringu', desa: 'Kalirejo', noTps: '002', saksi: 'Siti Aminah', status: true, suara: 72 },
+            { kec: 'Dringu', desa: 'Ngepoh', noTps: '003', saksi: 'Moh. Hasan', status: true, suara: 91 },
+            { kec: 'Dringu', desa: 'Ngepoh', noTps: '004', saksi: 'Sulaimah', status: false, suara: 0 },
+            { kec: 'Dringu', desa: 'Sumberdawesari', noTps: '005', saksi: 'Bambang Irawan', status: true, suara: 68 },
+            { kec: 'Dringu', desa: 'Sumberdawesari', noTps: '006', saksi: 'Nurhayati', status: true, suara: 77 },
+            { kec: 'Dringu', desa: 'Watuwungkuk', noTps: '007', saksi: 'Abd. Ghofur', status: true, suara: 63 },
+            { kec: 'Dringu', desa: 'Watuwungkuk', noTps: '008', saksi: 'Rudi Hartono', status: false, suara: 0 },
+            { kec: 'Dringu', desa: 'Dringu', noTps: '009', saksi: 'Imam Syafi\'i', status: true, suara: 95 },
+            { kec: 'Dringu', desa: 'Dringu', noTps: '010', saksi: 'Dewi Masruroh', status: true, suara: 81 },
+            // Gending (9 TPS)
+            { kec: 'Gending', desa: 'Gending', noTps: '001', saksi: 'Moh. Ridwan', status: true, suara: 78 },
+            { kec: 'Gending', desa: 'Gending', noTps: '002', saksi: 'Fatimah Zahra', status: true, suara: 65 },
+            { kec: 'Gending', desa: 'Pesisir', noTps: '003', saksi: 'Lukman Hakim', status: false, suara: 0 },
+            { kec: 'Gending', desa: 'Pesisir', noTps: '004', saksi: 'Samsul Arifin', status: true, suara: 88 },
+            { kec: 'Gending', desa: 'Banjarsari', noTps: '005', saksi: 'Nur Aini', status: true, suara: 54 },
+            { kec: 'Gending', desa: 'Banjarsari', noTps: '006', saksi: 'Hadi Purnomo', status: true, suara: 71 },
+            { kec: 'Gending', desa: 'Randumerak', noTps: '007', saksi: 'Sumarni', status: true, suara: 82 },
+            { kec: 'Gending', desa: 'Randumerak', noTps: '008', saksi: 'Eko Prasetyo', status: true, suara: 59 },
+            { kec: 'Gending', desa: 'Pajurangan', noTps: '009', saksi: 'Mulyadi', status: false, suara: 0 },
+            // Kraksaan (12 TPS)
+            { kec: 'Kraksaan', desa: 'Kraksaan Wetan', noTps: '001', saksi: 'Achmad Basuki', status: true, suara: 102 },
+            { kec: 'Kraksaan', desa: 'Kraksaan Wetan', noTps: '002', saksi: 'Sulistyowati', status: true, suara: 94 },
+            { kec: 'Kraksaan', desa: 'Kraksaan Wetan', noTps: '003', saksi: 'Moch. Ali Wafa', status: true, suara: 87 },
+            { kec: 'Kraksaan', desa: 'Kraksaan Kulon', noTps: '004', saksi: 'Endang Puji R.', status: true, suara: 115 },
+            { kec: 'Kraksaan', desa: 'Kraksaan Kulon', noTps: '005', saksi: 'Usman Effendi', status: false, suara: 0 },
+            { kec: 'Kraksaan', desa: 'Sidopekso', noTps: '006', saksi: 'Robiatul Adawiyah', status: true, suara: 76 },
+            { kec: 'Kraksaan', desa: 'Sidopekso', noTps: '007', saksi: 'Sugeng Riyadi', status: true, suara: 98 },
+            { kec: 'Kraksaan', desa: 'Semampir', noTps: '008', saksi: 'Zainul Abidin', status: true, suara: 83 },
+            { kec: 'Kraksaan', desa: 'Semampir', noTps: '009', saksi: 'Lilik Mulyani', status: true, suara: 91 },
+            { kec: 'Kraksaan', desa: 'Asembakor', noTps: '010', saksi: 'Dwi Cahyono', status: true, suara: 69 },
+            { kec: 'Kraksaan', desa: 'Asembakor', noTps: '011', saksi: 'Halimatus Sa\'diyah', status: true, suara: 108 },
+            { kec: 'Kraksaan', desa: 'Rangkang', noTps: '012', saksi: 'Saiful Bahri', status: false, suara: 0 },
+            // Paiton (10 TPS)
+            { kec: 'Paiton', desa: 'Paiton', noTps: '001', saksi: 'Abdurrahman', status: true, suara: 92 },
+            { kec: 'Paiton', desa: 'Paiton', noTps: '002', saksi: 'Sholehah', status: true, suara: 78 },
+            { kec: 'Paiton', desa: 'Sukodomol', noTps: '003', saksi: 'Budi Santoso', status: true, suara: 105 },
+            { kec: 'Paiton', desa: 'Sukodomol', noTps: '004', saksi: 'Khoirul Umam', status: false, suara: 0 },
+            { kec: 'Paiton', desa: 'Bhinneka', noTps: '005', saksi: 'Maisaroh', status: true, suara: 67 },
+            { kec: 'Paiton', desa: 'Bhinneka', noTps: '006', saksi: 'Totok Hariyanto', status: true, suara: 89 },
+            { kec: 'Paiton', desa: 'Jabung Sisir', noTps: '007', saksi: 'Siti Khodijah', status: true, suara: 73 },
+            { kec: 'Paiton', desa: 'Jabung Sisir', noTps: '008', saksi: 'Mashuri', status: true, suara: 96 },
+            { kec: 'Paiton', desa: 'Plampang', noTps: '009', saksi: 'Agus Salim', status: true, suara: 84 },
+            { kec: 'Paiton', desa: 'Plampang', noTps: '010', saksi: 'Rukmini', status: false, suara: 0 },
+            // Besuk (9 TPS)
+            { kec: 'Besuk', desa: 'Besuk', noTps: '001', saksi: 'Moh. Toha', status: true, suara: 118 },
+            { kec: 'Besuk', desa: 'Besuk', noTps: '002', saksi: 'Ummi Kultsum', status: true, suara: 97 },
+            { kec: 'Besuk', desa: 'Alaspandan', noTps: '003', saksi: 'Syaiful Anwar', status: true, suara: 132 },
+            { kec: 'Besuk', desa: 'Alaspandan', noTps: '004', saksi: 'Nur Halimah', status: true, suara: 104 },
+            { kec: 'Besuk', desa: 'Sindetanyar', noTps: '005', saksi: 'Kusairi', status: false, suara: 0 },
+            { kec: 'Besuk', desa: 'Sindetanyar', noTps: '006', saksi: 'Fitriyah', status: true, suara: 89 },
+            { kec: 'Besuk', desa: 'Bago', noTps: '007', saksi: 'Hamzah', status: true, suara: 110 },
+            { kec: 'Besuk', desa: 'Bago', noTps: '008', saksi: 'Aisyah Dewi', status: true, suara: 95 },
+            { kec: 'Besuk', desa: 'Matekan', noTps: '009', saksi: 'Ridwan Kamil', status: true, suara: 121 }
+        ];
 
-    function renderTable(data) {
-        const tbody = document.getElementById('tpsBody');
-        tbody.innerHTML = data.map((r, i) =>
-            `<tr><td>${i+1}</td><td>${r.kec}</td><td>${r.desa}</td><td>${r.noTps}</td><td>${r.saksi}</td>
-            <td><span class="${r.status?'badge-ok':'badge-no'}">${r.status?'Terpantau':'Belum'}</span></td>
-            <td>${r.status?r.suara:'—'}</td></tr>`
-        ).join('');
-    }
+        function renderTable(data) {
+            const tbody = document.getElementById('tpsBody');
+            tbody.innerHTML = data.map((r, i) =>
+                `<tr><td>${i + 1}</td><td>${r.kec}</td><td>${r.desa}</td><td>${r.noTps}</td><td>${r.saksi}</td>
+            <td><span class="${r.status ? 'badge-ok' : 'badge-no'}">${r.status ? 'Terpantau' : 'Belum'}</span></td>
+            <td>${r.status ? r.suara : '—'}</td></tr>`
+            ).join('');
+        }
 
-    function filterTable() {
-        const val = document.getElementById('kecFilter').value;
-        renderTable(val === 'all' ? tpsData : tpsData.filter(r => r.kec === val));
-    }
+        function filterTable() {
+            const val = document.getElementById('kecFilter').value;
+            renderTable(val === 'all' ? tpsData : tpsData.filter(r => r.kec === val));
+        }
 
-    function renderKecCards() {
-        const kecs = ['Dringu','Gending','Kraksaan','Paiton','Besuk'];
-        const container = document.getElementById('kecCards');
-        container.innerHTML = kecs.map(k => {
-            const rows = tpsData.filter(r => r.kec === k);
-            const tps = rows.length;
-            const aktif = rows.filter(r => r.status).length;
-            const suara = rows.reduce((s, r) => s + r.suara, 0);
-            return `<div class="col-lg-4 col-md-6"><div class="kec-card">
+        function renderKecCards() {
+            const kecs = ['Dringu', 'Gending', 'Kraksaan', 'Paiton', 'Besuk'];
+            const container = document.getElementById('kecCards');
+            container.innerHTML = kecs.map(k => {
+                const rows = tpsData.filter(r => r.kec === k);
+                const tps = rows.length;
+                const aktif = rows.filter(r => r.status).length;
+                const suara = rows.reduce((s, r) => s + r.suara, 0);
+                return `<div class="col-lg-4 col-md-6"><div class="kec-card">
                 <h4><i class="bi bi-geo-alt me-2"></i>${k}</h4>
                 <div class="kec-stat"><span>Total TPS</span><strong>${tps}</strong></div>
                 <div class="kec-stat"><span>Saksi Aktif</span><strong>${aktif} / ${tps}</strong></div>
                 <div class="kec-stat"><span>Total Suara PAN</span><strong>${suara.toLocaleString('id-ID')}</strong></div>
-                <div class="kec-stat"><span>% Terpantau</span><strong>${((aktif/tps)*100).toFixed(0)}%</strong></div>
+                <div class="kec-stat"><span>% Terpantau</span><strong>${((aktif / tps) * 100).toFixed(0)}%</strong></div>
             </div></div>`;
-        }).join('');
-    }
+            }).join('');
+        }
 
-    document.addEventListener('DOMContentLoaded', () => { renderTable(tpsData); renderKecCards(); });
+        document.addEventListener('DOMContentLoaded', () => { renderTable(tpsData); renderKecCards(); });
     </script>
 </body>
+
 </html>
