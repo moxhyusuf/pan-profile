@@ -9370,3 +9370,121 @@ section,
  . g a l l e r y - i t e m   . g a l l e r y - l i n k s   a   {   c o l o r :   # f f f ;   f o n t - s i z e :   2 8 p x ;   b a c k g r o u n d :   v a r ( - - a c c e n t - c o l o r ) ;   p a d d i n g :   1 0 p x   1 5 p x ;   b o r d e r - r a d i u s :   5 0 % ;   d i s p l a y :   i n l i n e - f l e x ;   t r a n s i t i o n :   0 . 3 s ;   }  
  . g a l l e r y - i t e m   . g a l l e r y - l i n k s   a : h o v e r   {   b a c k g r o u n d :   v a r ( - - c o l o r - s u r f a c e - s t r o n g ) ;   }  
  
+
+/* =========================================================================
+   Global Shared Components (Added via Refactor)
+========================================================================= */
+
+/* Page Title & Breadcrumbs */
+.page-title {
+  background-color: #0154a2;
+  padding: 40px 0;
+  color: #ffffff;
+}
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
+
+/* Global Summary Card (.pan-stat-card) */
+.pan-stat-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+  border-top: 5px solid #0154a2; /* Default border top, can be overridden */
+  transition: all 500ms ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.pan-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px 0px;
+}
+.pan-stat-card .icon {
+  font-size: 34px;
+  color: #0154a2;
+  margin-right: 20px;
+}
+.pan-stat-card .details h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #04415f;
+  margin: 0 0 5px 0;
+  line-height: 1.1;
+}
+.pan-stat-card .details p {
+  margin: 0;
+  color: rgba(1, 6, 8, 0.65);
+  font-size: 13.5px;
+}
+
+/* Global Table Box (.pan-table-box and .pan-table) */
+.pan-table-box {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+  overflow-x: auto;
+}
+.pan-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.pan-table th, .pan-table td {
+  padding: 13px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 13.5px;
+}
+.pan-table th {
+  background-color: rgba(1, 84, 162, 0.06);
+  color: #04415f;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pan-table tr:hover td {
+  background-color: rgba(1, 84, 162, 0.03);
+}
+
+/* Common Badges */
+.pan-badge-success {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pan-badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pan-badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pan-badge-info {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
