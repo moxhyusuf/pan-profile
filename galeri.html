@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Berita Detail - Partai Amanat Nasional</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title>Beranda - Partai Amanat Nasional</title>
+    <meta name="description" content="Website resmi DPD Partai Amanat Nasional (PAN) Probolinggo. Informasi sejarah, visi misi, program kerja, struktur organisasi, berita, dan agenda kegiatan PAN.">
+    <meta name="keywords" content="PAN, Partai Amanat Nasional, DPD PAN Probolinggo, partai politik Indonesia, reformasi, Zulkifli Hasan">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -26,31 +28,113 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Custom Gallery Styles from design.md -->
+    <style>
+        .gallery .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+            transition: all 500ms ease;
+            background: #ffffff;
+            height: 100%;
+        }
+
+        .gallery .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px 0px;
+        }
+
+        .gallery .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 600ms ease;
+        }
+
+        .gallery .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery .gallery-links {
+            position: absolute;
+            inset: 0;
+            background: rgba(1, 84, 162, 0.8);
+            opacity: 0;
+            transition: opacity 300ms ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery .gallery-item:hover .gallery-links {
+            opacity: 1;
+        }
+
+        .gallery .gallery-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #0154a2;
+            font-size: 24px;
+            transition: all 300ms ease;
+            transform: translateY(20px);
+        }
+
+        .gallery .gallery-item:hover .gallery-links a {
+            transform: translateY(0);
+        }
+
+        .gallery .gallery-links a:hover {
+            background: #010608;
+            color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 15px 0px;
+        }
+
+        .page-title {
+            background-color: #0154a2;
+            padding: 40px 0;
+            color: #ffffff;
+        }
+
+        .breadcrumbs a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            color: #ffffff;
+        }
+    </style>
 </head>
 
-<body class="news-details-page">
-
+<body class="index-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-
             <a href="index.html" class="logo d-flex align-items-center me-auto">
                 <img src="assets/img/pan2.svg" alt="">
             </a>
+
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
 
                     <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="oncoming.html">Visi & Misi</a></li>
+                            <li><a href="visimisi.html">Visi & Misi</a></li>
                             <li><a href="fraksi.html">Fraksi PAN</a></li>
                             <li><a href="kontak.html">Kontak Kami</a></li>
                         </ul>
                     </li>
 
                     <li><a href="program.html">Program Kegiatan</a></li>
-                    <li><a href="berita.html" class="active">Berita</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="galeri.html" class="active">Galeri</a></li>
 
                     <li class="dropdown"><a href="#"><span>Data Pemilihan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
@@ -70,116 +154,104 @@
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-
         </div>
     </header>
 
     <main class="main">
 
-        <!-- <div class="page-title light-background">
-            <div class="container d-lg-flex justify-content-between align-items-center">
-                <h1 class="mb-2 mb-lg-0">Detail Berita</h1>
-                <nav class="breadcrumbs">
-                    <ol>
-                        <li><a href="index.html">Berita</a></li>
-                        <li class="current">Detail Berita</li>
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container">
+                <nav class="breadcrumbs" style="margin-bottom: 15px;">
+                    <ol style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li style="color: rgba(255,255,255,0.5);">/</li>
+                        <li class="current">Galeri</li>
                     </ol>
                 </nav>
+                <h1 style="margin: 0; font-size: 32px; font-weight: 700; color: white;">Galeri Kegiatan PAN</h1>
             </div>
-        </div> -->
+        </div><!-- End Page Title -->
 
-        <!-- Blog Details Section -->
-        <section id="blog-details" class="blog-details section">
-            <div class="container" data-aos="fade-up">
-
-                <article class="article">
-                    <div class="article-header">
-                        <div class="meta-categories" data-aos="fade-up">
-                            <a href="#" class="category">Sosial Budaya</a>
-                            <a href="#" class="category">Identitas Nasional</a>
-                        </div>
-
-                        <h1 class="title" data-aos="fade-up" data-aos-delay="100">Pelestarian Budaya untuk Identitas Bangsa yang Kuat</h1>
-
-                        <div class="article-meta" data-aos="fade-up" data-aos-delay="200">
-                            <div class="author">
-                                <div class="author-info">
-                                    <span>Penulis</span>
-                                    <h4>H. Tjatur Sapto Edy, S.E., M.Si.</h4>
-                                </div>
-                            </div>
-                            <div class="post-info">
-                                <span><i class="bi bi-calendar4-week"></i> Juni 22, 2022</span>
-                                <span><i class="bi bi-clock"></i> 8 min read</span>
-                                <span><i class="bi bi-chat-square-text"></i> 28 Komentar</span>
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Konsolidasi">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Konsolidasi Nasional PAN" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="article-featured-image" data-aos="zoom-in">
-                        <img src="assets/img/berita/12.png" alt="Pelestarian Budaya Indonesia" class="img-fluid">
-                    </div>
-
-                    <div class="article-wrapper">
-                        <aside class="table-of-contents" data-aos="fade-left">
-                            <!-- <h3>Daftar Isi</h3>
-            <nav>
-                <ul>
-                    <li><a href="#pendahuluan" class="active">Pendahuluan</a></li>
-                    <li><a href="#keragaman">Keragaman Budaya Nusantara</a></li>
-                    <li><a href="#tantangan">Tantangan Modernisasi</a></li>
-                    <li><a href="#peran-pemerintah">Peran Pemerintah dan Masyarakat</a></li>
-                    <li><a href="#pendidikan">Pendidikan Berbasis Budaya</a></li>
-                    <li><a href="#masadepan">Masa Depan Budaya Indonesia</a></li>
-                </ul>
-            </nav> -->
-                        </aside>
-
-                        <div class="article-content">
-                            <div class="content-section" style="text-align: justify;" id="pendahuluan" data-aos="fade-up">
-                                <p>Indonesia sebagai negara kepulauan memiliki kekayaan budaya yang tak ternilai, dengan lebih dari 1.300 suku bangsa yang masing-masing memiliki tradisi, bahasa, dan adat istiadat unik. Pelestarian budaya bukan sekadar upaya menjaga warisan masa lalu, tetapi merupakan investasi berharga untuk memperkuat identitas nasional di tengah arus globalisasi yang semakin deras. Partai Amanat Nasional (PAN) berkomitmen penuh untuk mendukung berbagai inisiatif pelestarian budaya sebagai bagian integral dari pembangunan karakter bangsa.</p>
-                                <p>Di era digitalisasi saat ini, tantangan terbesar dalam pelestarian budaya adalah menjaga relevansi tradisi lokal di kalangan generasi muda. Banyak anak muda yang lebih akrab dengan budaya populer asing daripada kesenian tradisional daerahnya sendiri. Untuk mengatasi hal ini, diperlukan pendekatan kreatif yang memadukan nilai-nilai tradisional dengan medium modern, seperti penggunaan platform digital untuk mendokumentasikan dan mempromosikan warisan budaya.</p>
-                                <p>Pemerintah memiliki peran strategis dalam melindungi warisan budaya melalui regulasi yang tegas dan alokasi anggaran yang memadai. Namun, pelestarian budaya yang efektif harus melibatkan partisipasi aktif masyarakat, terutama komunitas adat sebagai pemilik sah budaya tersebut. Sinergi antara pemerintah, masyarakat, dan sektor swasta akan menciptakan ekosistem yang mendukung keberlanjutan budaya lokal.</p>
-                                <p>Pendidikan memainkan peran krusial dalam menanamkan kecintaan terhadap budaya sejak dini. Kurikulum sekolah perlu mengintegrasikan muatan lokal yang memperkenalkan kekayaan budaya daerah masing-masing. Selain itu, kegiatan ekstrakurikuler seperti sanggar seni, workshop tradisi, dan kunjungan ke situs budaya dapat memperkaya pengalaman belajar siswa tentang warisan leluhur mereka.</p>
-                                <p>Ke depan, budaya Indonesia memiliki potensi besar tidak hanya sebagai pemersatu bangsa tetapi juga sebagai penggerak ekonomi kreatif. Pengembangan wisata budaya, industri kreatif berbasis tradisi, dan digitalisasi warisan budaya dapat menciptakan lapangan kerja sekaligus melestarikan identitas nasional. Dengan strategi yang tepat, budaya Indonesia akan terus hidup dan berkembang, menjadi sumber kebanggaan bagi generasi sekarang dan masa depan.</p>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Rapat Kerja">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Rapat Kerja Daerah" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="article-footer" data-aos="fade-up">
-                        <div class="share-article">
-                            <h4>Bagikan Artikel Ini</h4>
-                            <div class="share-buttons">
-                                <a href="#" class="share-button twitter">
-                                    <i class="bi bi-twitter-x"></i>
-                                    <span>Bagikan di X</span>
-                                </a>
-                                <a href="#" class="share-button facebook">
-                                    <i class="bi bi-facebook"></i>
-                                    <span>Bagikan di Facebook</span>
-                                </a>
-                                <a href="#" class="share-button whatsapp">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <span>Bagikan di WhatsApp</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="article-tags">
-                            <h4>Topik Terkait</h4>
-                            <div class="tags">
-                                <a href="#" class="tag">Budaya Nasional</a>
-                                <a href="#" class="tag">Pelestarian Tradisi</a>
-                                <a href="#" class="tag">Identitas Bangsa</a>
-                                <a href="#" class="tag">Warisan Budaya</a>
-                                <a href="#" class="tag">Pendidikan Karakter</a>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Bakti Sosial">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Bakti Sosial PAN" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                             </div>
                         </div>
                     </div>
-                </article>
 
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Pendidikan Politik">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Pendidikan Politik Kader" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Kunjungan Masyarakat">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Kunjungan Tokoh Masyarakat" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Kampanye">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Kampanye Terbuka" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Penyerahan Bantuan">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Penyerahan Bantuan UMKM" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/dummy.jpg" class="img-fluid" alt="Kegiatan Pemuda">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="assets/img/dummy.jpg" title="Kegiatan Pemuda PAN" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </section><!-- /Blog Details Section -->
+        </section>
 
     </main>
 

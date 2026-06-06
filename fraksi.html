@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Fraksi PAN - Partai Amanat Nasional</title>
+    <meta name="description" content="Informasi Struktur dan Anggota DPRD Fraksi Partai Amanat Nasional (PAN) Probolinggo.">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Custom Styles from design.md -->
+    <style>
+        .page-title {
+            background-color: #0154a2;
+            padding: 40px 0;
+            color: #ffffff;
+        }
+
+        .breadcrumbs a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            color: #ffffff;
+        }
+
+        /* Profile Text */
+        .profil-fraksi {
+            font-size: 17.6px;
+            line-height: 1.8;
+            color: rgba(1, 6, 8, 0.8);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Person Card Styles */
+        .person-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+            overflow: hidden;
+            transition: all 500ms ease;
+            height: 100%;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px 0px;
+        }
+
+        .person-card .card-thumb {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 30px auto 15px;
+            overflow: hidden;
+            border: 4px solid #f1f5f7;
+        }
+
+        .person-card .card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .person-card .card-body {
+            padding: 0 20px 30px;
+        }
+
+        .person-card .card-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #010608;
+        }
+
+        .person-card .card-role {
+            font-size: 14.4px;
+            color: #0154a2;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .person-card .card-meta {
+            background: #f1f5f7;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: rgba(1, 6, 8, 0.8);
+            text-align: left;
+        }
+
+        .person-card .card-meta p {
+            margin: 0;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .person-card .card-meta p:last-child {
+            border-bottom: none;
+        }
+
+        .person-card .card-meta i {
+            color: #0154a2;
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* Agenda List Styles */
+        .agenda-list {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 15px 0px;
+            padding: 30px;
+        }
+
+        .agenda-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 300ms ease;
+        }
+
+        .agenda-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .agenda-item:first-child {
+            padding-top: 0;
+        }
+
+        .agenda-item:hover {
+            background: #f1f5f7;
+            border-radius: 8px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .agenda-date {
+            min-width: 80px;
+            text-align: center;
+            background: rgba(1, 84, 162, 0.1);
+            color: #0154a2;
+            padding: 10px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .agenda-date .day {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .agenda-date .month {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .agenda-info {
+            flex-grow: 1;
+        }
+
+        .agenda-info h4 {
+            font-size: 17.6px;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+            color: #010608;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/pan2.svg" alt="">
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+
+                    <li class="dropdown"><a href="#" class="active"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="visimisi.html">Visi & Misi</a></li>
+                            <li><a href="fraksi.html" class="active">Fraksi PAN</a></li>
+                            <li><a href="kontak.html">Kontak Kami</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="program.html">Program Kegiatan</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+
+                    <li class="dropdown"><a href="#"><span>Data Pemilihan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                            <li><a href="quick-count.html">Quick Count</a></li>
+                            <li><a href="sebaran-tps.html">Sebaran Daerah (TPS Probolinggo)</a></li>
+                            <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a href="#"><span>Struktur Relawan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="oncoming.html">Kordes, Korcam, & Korkab</a></li>
+                            <li><a href="oncoming.html">Spesifikasi Gen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container">
+                <nav class="breadcrumbs" style="margin-bottom: 15px;">
+                    <ol style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li style="color: rgba(255,255,255,0.5);">/</li>
+                        <li><a href="#">Profil</a></li>
+                        <li style="color: rgba(255,255,255,0.5);">/</li>
+                        <li class="current">Fraksi PAN</li>
+                    </ol>
+                </nav>
+                <h1 style="margin: 0; font-size: 32px; font-weight: 700; color: white;">Fraksi PAN DPRD</h1>
+            </div>
+        </div><!-- End Page Title -->
+
+        <!-- Profil Singkat Section -->
+        <section id="profil" class="section pb-0">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Mengenal Fraksi PAN</h2>
+                </div>
+                <p class="profil-fraksi">
+                    Fraksi Partai Amanat Nasional (PAN) DPRD Kabupaten/Kota Probolinggo merupakan perpanjangan tangan partai di lembaga legislatif. Kami berkomitmen untuk memperjuangkan aspirasi masyarakat, mengawal kebijakan pemerintah daerah agar pro-rakyat, serta menjalankan fungsi legislasi, anggaran, dan pengawasan dengan prinsip transparansi, integritas, dan berlandaskan akhlak politik yang membawa rahmat bagi semua.
+                </p>
+            </div>
+        </section>
+
+        <!-- Struktur Fraksi Section -->
+        <section id="struktur-fraksi" class="section light-background">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Struktur Fraksi</h2>
+                    <p>Pimpinan Fraksi Partai Amanat Nasional DPRD Probolinggo</p>
+                </div>
+
+                <div class="row gy-4 justify-content-center">
+                    <!-- Ketua Fraksi -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Ketua Fraksi">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">H. Ahmad Rifai, S.H.</h3>
+                                <p class="card-role">Ketua Fraksi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sekretaris Fraksi -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Sekretaris Fraksi">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">Budi Santoso, S.E.</h3>
+                                <p class="card-role">Sekretaris Fraksi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bendahara Fraksi -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Bendahara Fraksi">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">Hj. Siti Aminah, S.Pd.</h3>
+                                <p class="card-role">Bendahara Fraksi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Daftar Anggota DPRD Section -->
+        <section id="anggota-dprd" class="section">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Anggota DPRD Fraksi PAN</h2>
+                    <p>Wakil Rakyat dari Partai Amanat Nasional yang mengabdi untuk Probolinggo</p>
+                </div>
+
+                <div class="row gy-4">
+                    <!-- Anggota 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Anggota 1">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">M. Fathur Rozi</h3>
+                                <div class="card-meta">
+                                    <p><i class="bi bi-geo-alt"></i> Dapil I (Kec. Mayangan)</p>
+                                    <p><i class="bi bi-building"></i> Komisi A (Pemerintahan)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Anggota 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Anggota 2">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">Surya Darma</h3>
+                                <div class="card-meta">
+                                    <p><i class="bi bi-geo-alt"></i> Dapil II (Kec. Kanigaran)</p>
+                                    <p><i class="bi bi-building"></i> Komisi B (Ekonomi)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Anggota 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Anggota 3">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">Diana Sari, S.Kom</h3>
+                                <div class="card-meta">
+                                    <p><i class="bi bi-geo-alt"></i> Dapil III (Kec. Wonoasih)</p>
+                                    <p><i class="bi bi-building"></i> Komisi C (Pembangunan)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Anggota 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="person-card">
+                            <div class="card-thumb">
+                                <img src="assets/img/dummy.jpg" alt="Anggota 4">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-name">Irfan Hakim</h3>
+                                <div class="card-meta">
+                                    <p><i class="bi bi-geo-alt"></i> Dapil IV (Kec. Kedopok)</p>
+                                    <p><i class="bi bi-building"></i> Komisi D (Kesejahteraan)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Kegiatan Fraksi Section -->
+        <section id="kegiatan-fraksi" class="section light-background">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Kegiatan Fraksi</h2>
+                    <p>Aktivitas terbaru dari Fraksi PAN di lingkungan DPRD</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="agenda-list">
+
+                            <!-- Kegiatan 1 -->
+                            <div class="agenda-item">
+                                <div class="agenda-date">
+                                    <span class="day">10</span>
+                                    <span class="month">Mei</span>
+                                </div>
+                                <div class="agenda-info">
+                                    <h4>Rapat Paripurna Pandangan Umum Fraksi</h4>
+                                    <p>Fraksi PAN menyampaikan pandangan umum terkait Raperda APBD Perubahan Tahun 2026, menekankan pentingnya efisiensi anggaran belanja daerah.</p>
+                                </div>
+                            </div>
+
+                            <!-- Kegiatan 2 -->
+                            <div class="agenda-item">
+                                <div class="agenda-date">
+                                    <span class="day">18</span>
+                                    <span class="month">Mei</span>
+                                </div>
+                                <div class="agenda-info">
+                                    <h4>Kunjungan Kerja Komisi B ke Sentra UMKM</h4>
+                                    <p>Anggota Fraksi PAN dari Komisi B melakukan peninjauan ke sentra produksi batik lokal untuk menyerap aspirasi kendala permodalan.</p>
+                                </div>
+                            </div>
+
+                            <!-- Kegiatan 3 -->
+                            <div class="agenda-item">
+                                <div class="agenda-date">
+                                    <span class="day">25</span>
+                                    <span class="month">Mei</span>
+                                </div>
+                                <div class="agenda-info">
+                                    <h4>Audiensi bersama Serikat Pekerja</h4>
+                                    <p>Menerima kedatangan perwakilan serikat pekerja di ruang Fraksi PAN untuk membahas regulasi ketenagakerjaan di tingkat daerah.</p>
+                                </div>
+                            </div>
+
+                            <!-- Kegiatan 4 -->
+                            <div class="agenda-item">
+                                <div class="agenda-date">
+                                    <span class="day">02</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="agenda-info">
+                                    <h4>Inspeksi Mendadak (Sidak) Proyek Infrastruktur</h4>
+                                    <p>Anggota Fraksi dari Komisi C meninjau langsung kualitas pengerjaan proyek perbaikan jalan kabupaten di wilayah selatan.</p>
+                                </div>
+                            </div>
+
+                            <!-- Kegiatan 5 -->
+                            <div class="agenda-item">
+                                <div class="agenda-date">
+                                    <span class="day">05</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="agenda-info">
+                                    <h4>Rapat Internal Fraksi PAN</h4>
+                                    <p>Konsolidasi rutin mingguan anggota Fraksi untuk menyelaraskan sikap politik partai terhadap isu-isu krusial pemerintahan daerah terkini.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="footer position-relative dark-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">DPD PAN PROBOLINGGO</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>Jl. Raya Panglima Sudirman No. XX</p>
+                        <p>Kota Probolinggo, Jawa Timur</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p>
+                        <p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="visimisi.html">Visi & Misi</a></li>
+                        <li><a href="berita.html">Berita Terkini</a></li>
+                        <li><a href="program.html">Program Kegiatan</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Data Pemilihan</h4>
+                    <ul>
+                        <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                        <li><a href="quick-count.html">Quick Count</a></li>
+                        <li><a href="sebaran-tps.html">Sebaran TPS</a></li>
+                        <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Struktur Relawan</h4>
+                    <ul>
+                        <li><a href="kordes-korcam.html">Kordes & Korcam</a></li>
+                        <li><a href="korkab.html">Korkab</a></li>
+                        <li><a href="spesifikasi-gen.html">Spesifikasi Gen</a></li>
+                        <li><a href="fraksi.html">Fraksi PAN</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Aspirasi Rakyat</a></li>
+                        <li><a href="#">Pendaftaran Relawan</a></li>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Privasi Data</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Partai Amanat Nasional</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+                Designed by <a href="https://www.instagram.com/hi.tech.software/" target="_blank">Hi Tech</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

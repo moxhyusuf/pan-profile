@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Evaluasi Program - Partai Amanat Nasional</title>
+    <meta name="description" content="Evaluasi dan capaian program kerja DPD PAN Kabupaten Probolinggo.">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .page-title { background-color:#0154a2; padding:40px 0; color:#fff; }
+        .breadcrumbs a { color:rgba(255,255,255,0.8); text-decoration:none; }
+        .breadcrumbs a:hover { color:#fff; }
+
+        .ev-card { background:#fff; border-radius:15px; padding:24px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; border-top:5px solid #0154a2; transition:all 500ms ease; height:100%; text-align:center; }
+        .ev-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
+        .ev-card .ev-icon { font-size:34px; margin-bottom:10px; }
+        .ev-card .ev-icon.green { color:#059669; }
+        .ev-card .ev-icon.blue { color:#0154a2; }
+        .ev-card .ev-icon.red { color:#dc2626; }
+        .ev-card .ev-icon.amber { color:#d97706; }
+        .ev-card .ev-val { font-size:28px; font-weight:800; color:#04415f; }
+        .ev-card .ev-lbl { font-size:13px; color:rgba(1,6,8,0.6); }
+
+        .chart-box { background:#fff; border-radius:15px; padding:30px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; }
+        .tbl-box { background:#fff; border-radius:15px; padding:25px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; overflow-x:auto; }
+        .tbl { width:100%; border-collapse:collapse; }
+        .tbl th,.tbl td { padding:13px 15px; text-align:left; border-bottom:1px solid rgba(0,0,0,0.05); font-size:13.5px; }
+        .tbl th { background:rgba(1,84,162,0.06); color:#04415f; font-weight:600; white-space:nowrap; }
+        .tbl tr:hover td { background:rgba(1,84,162,0.03); }
+
+        .badge-ok { background:#d1fae5; color:#065f46; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+        .badge-part { background:#fef3c7; color:#92400e; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+        .badge-fail { background:#fee2e2; color:#991b1b; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+
+        .capaian-bar { height:8px; border-radius:4px; background:rgba(0,0,0,0.06); overflow:hidden; min-width:80px; }
+        .capaian-fill { height:100%; border-radius:4px; }
+        .capaian-fill.green { background:#059669; }
+        .capaian-fill.amber { background:#d97706; }
+        .capaian-fill.red { background:#dc2626; }
+    </style>
+</head>
+<body class="page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+            <a href="index.html" class="logo d-flex align-items-center me-auto"><img src="assets/img/pan2.svg" alt=""></a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="visimisi.html">Visi &amp; Misi</a></li>
+                            <li><a href="fraksi.html">Fraksi PAN</a></li>
+                            <li><a href="kontak.html">Kontak Kami</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program Kegiatan</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li class="dropdown"><a href="#" class="active"><span>Data Pemilihan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                            <li><a href="quick-count.html">Quick Count</a></li>
+                            <li><a href="sebaran-tps.html">Sebaran Daerah (TPS Probolinggo)</a></li>
+                            <li><a href="evaluasi-program.html" class="active">Evaluasi Program</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Struktur Relawan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="oncoming.html">Kordes, Korcam, &amp; Korkab</a></li>
+                            <li><a href="oncoming.html">Spesifikasi Gen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="page-title" data-aos="fade">
+            <div class="container">
+                <nav class="breadcrumbs" style="margin-bottom:15px;">
+                    <ol style="list-style:none;padding:0;margin:0;display:flex;gap:10px;">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li style="color:rgba(255,255,255,0.5);">/</li>
+                        <li><a href="#">Data Pemilihan</a></li>
+                        <li style="color:rgba(255,255,255,0.5);">/</li>
+                        <li class="current">Evaluasi Program</li>
+                    </ol>
+                </nav>
+                <h1 style="margin:0;font-size:32px;font-weight:700;color:white;">Evaluasi Program Kerja</h1>
+            </div>
+        </div>
+
+        <section class="section light-background">
+            <div class="container" data-aos="fade-up">
+
+                <!-- Summary Cards -->
+                <div class="row gy-4 mb-5">
+                    <div class="col-lg-3 col-md-6"><div class="ev-card"><div class="ev-icon blue"><i class="bi bi-clipboard-data"></i></div><div class="ev-val">18</div><div class="ev-lbl">Total Program Terlaksana</div></div></div>
+                    <div class="col-lg-3 col-md-6"><div class="ev-card"><div class="ev-icon green"><i class="bi bi-check-circle"></i></div><div class="ev-val">11</div><div class="ev-lbl">Program Tercapai Target</div></div></div>
+                    <div class="col-lg-3 col-md-6"><div class="ev-card"><div class="ev-icon red"><i class="bi bi-x-circle"></i></div><div class="ev-val">3</div><div class="ev-lbl">Program Tidak Tercapai</div></div></div>
+                    <div class="col-lg-3 col-md-6"><div class="ev-card"><div class="ev-icon amber"><i class="bi bi-speedometer2"></i></div><div class="ev-val">78.4%</div><div class="ev-lbl">Rata-rata Capaian</div></div></div>
+                </div>
+
+                <!-- Chart -->
+                <div class="section-title"><h2>Target vs Realisasi</h2><p>Perbandingan target dan realisasi program per kategori</p></div>
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="chart-box"><canvas id="evalChart" height="90"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="section-title"><h2>Detail Evaluasi Per Program</h2><p>Capaian masing-masing program kerja DPD PAN Probolinggo</p></div>
+                <div class="tbl-box">
+                    <table class="tbl">
+                        <thead><tr><th>No</th><th>Program</th><th>Kategori</th><th>Target</th><th>Realisasi</th><th>Capaian</th><th>Status</th></tr></thead>
+                        <tbody id="evalBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer position-relative dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center"><span class="sitename">DPD PAN PROBOLINGGO</span></a>
+                    <div class="footer-contact pt-3"><p>Jl. Raya Panglima Sudirman No. XX</p><p>Kota Probolinggo, Jawa Timur</p><p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p><p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p></div>
+                    <div class="social-links d-flex mt-4"><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-youtube"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Navigasi</h4><ul><li><a href="index.html">Beranda</a></li><li><a href="visimisi.html">Visi &amp; Misi</a></li><li><a href="berita.html">Berita Terkini</a></li><li><a href="program.html">Program Kegiatan</a></li><li><a href="galeri.html">Galeri</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Data Pemilihan</h4><ul><li><a href="perolehan-suara.html">Perolehan Suara</a></li><li><a href="quick-count.html">Quick Count</a></li><li><a href="sebaran-tps.html">Sebaran TPS</a></li><li><a href="evaluasi-program.html">Evaluasi Program</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Struktur Relawan</h4><ul><li><a href="oncoming.html">Kordes &amp; Korcam</a></li><li><a href="oncoming.html">Korkab</a></li><li><a href="oncoming.html">Spesifikasi Gen</a></li><li><a href="fraksi.html">Fraksi PAN</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Layanan</h4><ul><li><a href="#">Aspirasi Rakyat</a></li><li><a href="#">Pendaftaran Relawan</a></li><li><a href="#">Pusat Bantuan</a></li><li><a href="#">Privasi Data</a></li></ul></div>
+            </div>
+        </div>
+        <div class="container copyright text-center mt-4"><p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Partai Amanat Nasional</strong> <span>All Rights Reserved</span></p><div class="credits">Designed by <a href="https://www.instagram.com/hi.tech.software/" target="_blank">Hi Tech</a></div></div>
+    </footer>
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+    const programs = [
+        {nama:'Pemberdayaan UMKM Daerah',kat:'Ekonomi',target:500,real:480,unit:'pelaku'},
+        {nama:'Pelatihan Keterampilan Warga',kat:'Ekonomi',target:300,real:315,unit:'peserta'},
+        {nama:'Bantuan Modal Usaha Mikro',kat:'Ekonomi',target:200,real:165,unit:'penerima'},
+        {nama:'Cek Kesehatan Gratis',kat:'Kesehatan',target:1000,real:1120,unit:'warga'},
+        {nama:'Donor Darah Massal',kat:'Kesehatan',target:8,real:8,unit:'kegiatan'},
+        {nama:'Posyandu Lansia Keliling',kat:'Kesehatan',target:24,real:18,unit:'titik'},
+        {nama:'Bantuan Sembako Warga',kat:'Sosial',target:2000,real:2150,unit:'paket'},
+        {nama:'Santunan Anak Yatim',kat:'Sosial',target:150,real:160,unit:'anak'},
+        {nama:'Bedah Rumah Tidak Layak',kat:'Sosial',target:10,real:7,unit:'rumah'},
+        {nama:'Bakti Sosial Bencana',kat:'Sosial',target:5,real:5,unit:'kegiatan'},
+        {nama:'Beasiswa Kader Berprestasi',kat:'Pendidikan',target:50,real:48,unit:'penerima'},
+        {nama:'Pelatihan Digital untuk Guru',kat:'Pendidikan',target:100,real:85,unit:'guru'},
+        {nama:'Bantuan Buku Perpustakaan',kat:'Pendidikan',target:12,real:12,unit:'sekolah'},
+        {nama:'Konsolidasi Pengurus Ranting',kat:'Kepartaian',target:24,real:24,unit:'kecamatan'},
+        {nama:'Rekrutmen Anggota Baru',kat:'Kepartaian',target:1000,real:870,unit:'orang'},
+        {nama:'Pelatihan Saksi Pemilu',kat:'Kepartaian',target:1200,real:1080,unit:'saksi'},
+        {nama:'Turnamen Futsal BM PAN',kat:'Kepartaian',target:1,real:1,unit:'event'},
+        {nama:'Gerakan Tanam Pohon',kat:'Sosial',target:5000,real:3200,unit:'bibit'},
+    ];
+
+    function getStatus(pct) {
+        if (pct >= 90) return {label:'Tercapai', cls:'badge-ok'};
+        if (pct >= 60) return {label:'Sebagian', cls:'badge-part'};
+        return {label:'Tidak Tercapai', cls:'badge-fail'};
+    }
+
+    function getBarColor(pct) {
+        if (pct >= 90) return 'green';
+        if (pct >= 60) return 'amber';
+        return 'red';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Render table
+        const tbody = document.getElementById('evalBody');
+        tbody.innerHTML = programs.map((p, i) => {
+            const pct = Math.round((p.real / p.target) * 100);
+            const st = getStatus(pct);
+            const col = getBarColor(pct);
+            return `<tr><td>${i+1}</td><td>${p.nama}</td><td>${p.kat}</td>
+                <td>${p.target.toLocaleString('id-ID')} ${p.unit}</td>
+                <td>${p.real.toLocaleString('id-ID')} ${p.unit}</td>
+                <td><div style="display:flex;align-items:center;gap:8px;">
+                    <div class="capaian-bar"><div class="capaian-fill ${col}" style="width:${Math.min(pct,100)}%"></div></div>
+                    <span style="font-weight:600;font-size:13px;">${pct}%</span></div></td>
+                <td><span class="${st.cls}">${st.label}</span></td></tr>`;
+        }).join('');
+
+        // Chart
+        const cats = ['Sosial','Pendidikan','Ekonomi','Kesehatan','Kepartaian'];
+        const targets = cats.map(c => programs.filter(p => p.kat === c).reduce((s,p) => s + p.target, 0));
+        const reals = cats.map(c => programs.filter(p => p.kat === c).reduce((s,p) => s + p.real, 0));
+
+        new Chart(document.getElementById('evalChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: cats,
+                datasets: [
+                    { label:'Target', data:targets, backgroundColor:'rgba(1,84,162,0.25)', borderColor:'#0154a2', borderWidth:1, borderRadius:5 },
+                    { label:'Realisasi', data:reals, backgroundColor:'rgba(1,84,162,0.85)', borderColor:'#04415f', borderWidth:1, borderRadius:5 }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position:'top' } },
+                scales: { y: { beginAtZero:true, title:{ display:true, text:'Jumlah' } } }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

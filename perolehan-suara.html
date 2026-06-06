@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Perolehan Suara - Partai Amanat Nasional</title>
+    <meta name="description" content="Data resmi perolehan suara DPD Partai Amanat Nasional (PAN) Kabupaten Probolinggo dari KPU.">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .page-title {
+            background-color: #0154a2;
+            padding: 40px 0;
+            color: #ffffff;
+        }
+
+        .breadcrumbs a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover { color: #ffffff; }
+
+        /* Summary Cards */
+        .stat-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 28px 24px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+            border-top: 5px solid #0154a2;
+            transition: all 500ms ease;
+            height: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px 0px;
+        }
+
+        .stat-card .stat-icon {
+            font-size: 32px;
+            color: #0154a2;
+            margin-bottom: 12px;
+        }
+
+        .stat-card .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #04415f;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .stat-card .stat-label {
+            font-size: 13.5px;
+            color: rgba(1, 6, 8, 0.65);
+        }
+
+        /* Chart box */
+        .chart-box {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Table */
+        .table-box {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px 0px;
+            overflow-x: auto;
+        }
+
+        .table-source {
+            font-size: 12px;
+            color: rgba(1,6,8,0.5);
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tbl th, .tbl td {
+            padding: 13px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 14px;
+        }
+
+        .tbl th {
+            background-color: rgba(1, 84, 162, 0.06);
+            color: #04415f;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tbl tr:hover td { background-color: rgba(1, 84, 162, 0.04); }
+
+        .kursi-badge {
+            display: inline-block;
+            background: #0154a2;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        /* Footer note */
+        .footer-note {
+            background: #e8f4fd;
+            color: #04415f;
+            border-left: 5px solid #0154a2;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .footer-note i { font-size: 20px; color: #0154a2; }
+    </style>
+</head>
+
+<body class="page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/pan2.svg" alt="">
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+
+                    <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="visimisi.html">Visi &amp; Misi</a></li>
+                            <li><a href="fraksi.html">Fraksi PAN</a></li>
+                            <li><a href="kontak.html">Kontak Kami</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="program.html">Program Kegiatan</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+
+                    <li class="dropdown"><a href="#" class="active"><span>Data Pemilihan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="perolehan-suara.html" class="active">Perolehan Suara</a></li>
+                            <li><a href="quick-count.html">Quick Count</a></li>
+                            <li><a href="sebaran-tps.html">Sebaran Daerah (TPS Probolinggo)</a></li>
+                            <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a href="#"><span>Struktur Relawan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="oncoming.html">Kordes, Korcam, &amp; Korkab</a></li>
+                            <li><a href="oncoming.html">Spesifikasi Gen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container">
+                <nav class="breadcrumbs" style="margin-bottom: 15px;">
+                    <ol style="list-style:none; padding:0; margin:0; display:flex; gap:10px;">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li style="color:rgba(255,255,255,0.5);">/</li>
+                        <li><a href="#">Data Pemilihan</a></li>
+                        <li style="color:rgba(255,255,255,0.5);">/</li>
+                        <li class="current">Perolehan Suara</li>
+                    </ol>
+                </nav>
+                <h1 style="margin:0; font-size:32px; font-weight:700; color:white;">Perolehan Suara Resmi</h1>
+            </div>
+        </div>
+
+        <section class="section light-background">
+            <div class="container" data-aos="fade-up">
+
+                <!-- Summary Cards -->
+                <div class="row gy-4 mb-5">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-ballot"></i></div>
+                            <div class="stat-value">92.418</div>
+                            <div class="stat-label">Total Suara Sah PAN</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-trophy"></i></div>
+                            <div class="stat-value">Peringkat 3</div>
+                            <div class="stat-label">Di Kabupaten Probolinggo</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-person-badge"></i></div>
+                            <div class="stat-value">6 Kursi</div>
+                            <div class="stat-label">DPRD Kabupaten Probolinggo</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-pie-chart"></i></div>
+                            <div class="stat-value">10.87%</div>
+                            <div class="stat-label">Dari Total Suara Sah</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donut Chart -->
+                <div class="section-title">
+                    <h2>Grafik Perolehan Suara</h2>
+                    <p>Distribusi suara sah seluruh partai peserta pemilu di Kabupaten Probolinggo</p>
+                </div>
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="chart-box">
+                            <canvas id="donutChart" height="280"></canvas>
+                            <div class="chart-legend" id="chartLegend"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recap Table -->
+                <div class="section-title">
+                    <h2>Rekapitulasi Resmi Per Kecamatan</h2>
+                    <p>Data perolehan suara PAN di 24 Kecamatan Kabupaten Probolinggo</p>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-box">
+                            <table class="tbl">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kecamatan</th>
+                                        <th>DPT</th>
+                                        <th>Suara Sah</th>
+                                        <th>Suara PAN</th>
+                                        <th>%</th>
+                                        <th>Kursi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Bantaran</td><td>30.200</td><td>22.100</td><td>2.380</td><td>10.77%</td><td>—</td></tr>
+                                    <tr><td>2</td><td>Banyuanyar</td><td>38.500</td><td>28.400</td><td>3.200</td><td>11.27%</td><td>—</td></tr>
+                                    <tr><td>3</td><td>Besuk</td><td>42.100</td><td>31.500</td><td>4.920</td><td>15.62%</td><td><span class="kursi-badge">1</span></td></tr>
+                                    <tr><td>4</td><td>Dringu</td><td>45.000</td><td>33.200</td><td>3.750</td><td>11.30%</td><td>—</td></tr>
+                                    <tr><td>5</td><td>Gading</td><td>28.700</td><td>20.900</td><td>2.100</td><td>10.05%</td><td>—</td></tr>
+                                    <tr><td>6</td><td>Gending</td><td>32.400</td><td>24.100</td><td>2.540</td><td>10.54%</td><td>—</td></tr>
+                                    <tr><td>7</td><td>Kotaanyar</td><td>22.800</td><td>16.500</td><td>1.850</td><td>11.21%</td><td>—</td></tr>
+                                    <tr><td>8</td><td>Kraksaan</td><td>62.000</td><td>46.800</td><td>5.800</td><td>12.39%</td><td><span class="kursi-badge">1</span></td></tr>
+                                    <tr><td>9</td><td>Krejengan</td><td>35.500</td><td>26.200</td><td>3.100</td><td>11.83%</td><td>—</td></tr>
+                                    <tr><td>10</td><td>Krucil</td><td>28.000</td><td>20.300</td><td>1.950</td><td>9.61%</td><td>—</td></tr>
+                                    <tr><td>11</td><td>Kuripan</td><td>18.500</td><td>13.200</td><td>1.280</td><td>9.70%</td><td>—</td></tr>
+                                    <tr><td>12</td><td>Leces</td><td>52.000</td><td>39.100</td><td>4.500</td><td>11.51%</td><td><span class="kursi-badge">1</span></td></tr>
+                                    <tr><td>13</td><td>Lumbang</td><td>20.100</td><td>14.800</td><td>1.480</td><td>10.00%</td><td>—</td></tr>
+                                    <tr><td>14</td><td>Maron</td><td>44.600</td><td>33.500</td><td>3.820</td><td>11.40%</td><td>—</td></tr>
+                                    <tr><td>15</td><td>Pakuniran</td><td>31.200</td><td>23.000</td><td>2.680</td><td>11.65%</td><td>—</td></tr>
+                                    <tr><td>16</td><td>Paiton</td><td>68.000</td><td>51.200</td><td>6.100</td><td>11.91%</td><td><span class="kursi-badge">1</span></td></tr>
+                                    <tr><td>17</td><td>Pajarakan</td><td>33.000</td><td>24.500</td><td>2.850</td><td>11.63%</td><td>—</td></tr>
+                                    <tr><td>18</td><td>Sukapura</td><td>15.800</td><td>11.400</td><td>1.050</td><td>9.21%</td><td>—</td></tr>
+                                    <tr><td>19</td><td>Sumber</td><td>12.500</td><td>9.200</td><td>890</td><td>9.67%</td><td>—</td></tr>
+                                    <tr><td>20</td><td>Sumberasih</td><td>55.000</td><td>41.000</td><td>4.680</td><td>11.41%</td><td><span class="kursi-badge">1</span></td></tr>
+                                    <tr><td>21</td><td>Tegalsiwalan</td><td>29.800</td><td>22.000</td><td>2.500</td><td>11.36%</td><td>—</td></tr>
+                                    <tr><td>22</td><td>Tiris</td><td>26.000</td><td>19.200</td><td>1.820</td><td>9.48%</td><td>—</td></tr>
+                                    <tr><td>23</td><td>Tongas</td><td>50.000</td><td>37.500</td><td>4.250</td><td>11.33%</td><td><span class="kursi-badge">1</span></td></tr>
+                                    <tr><td>24</td><td>Wonomerto</td><td>28.300</td><td>20.800</td><td>2.448</td><td>11.77%</td><td>—</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="table-source"><i class="bi bi-info-circle me-1"></i>Sumber: Rekapitulasi Resmi KPU Kabupaten Probolinggo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Note -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-note">
+                            <i class="bi bi-patch-check-fill"></i>
+                            <span><strong>Data Resmi:</strong> Data bersumber dari KPU Kabupaten Probolinggo dan bersifat final sesuai berita acara rekapitulasi hasil penghitungan perolehan suara pemilu.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="footer position-relative dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">DPD PAN PROBOLINGGO</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>Jl. Raya Panglima Sudirman No. XX</p>
+                        <p>Kota Probolinggo, Jawa Timur</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p>
+                        <p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="visimisi.html">Visi &amp; Misi</a></li>
+                        <li><a href="berita.html">Berita Terkini</a></li>
+                        <li><a href="program.html">Program Kegiatan</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Data Pemilihan</h4>
+                    <ul>
+                        <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                        <li><a href="quick-count.html">Quick Count</a></li>
+                        <li><a href="sebaran-tps.html">Sebaran TPS</a></li>
+                        <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Struktur Relawan</h4>
+                    <ul>
+                        <li><a href="oncoming.html">Kordes &amp; Korcam</a></li>
+                        <li><a href="oncoming.html">Korkab</a></li>
+                        <li><a href="oncoming.html">Spesifikasi Gen</a></li>
+                        <li><a href="fraksi.html">Fraksi PAN</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Aspirasi Rakyat</a></li>
+                        <li><a href="#">Pendaftaran Relawan</a></li>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Privasi Data</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Partai Amanat Nasional</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">Designed by <a href="https://www.instagram.com/hi.tech.software/" target="_blank">Hi Tech</a></div>
+        </div>
+    </footer>
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const parties = [
+                { name: 'PKB',       votes: 142500, color: '#009933' },
+                { name: 'Gerindra',  votes: 118200, color: '#CC0000' },
+                { name: 'PAN',       votes: 92418,  color: '#0154a2' },
+                { name: 'PDIP',      votes: 88600,  color: '#ED1C24' },
+                { name: 'Golkar',    votes: 74300,  color: '#FFCC00' },
+                { name: 'NasDem',    votes: 62100,  color: '#1E3D8F' },
+                { name: 'PKS',       votes: 55800,  color: '#1E7C45' },
+                { name: 'Demokrat',  votes: 48200,  color: '#003399' },
+                { name: 'PPP',       votes: 32400,  color: '#006600' },
+                { name: 'Lainnya',   votes: 34000,  color: '#aaaaaa' },
+            ];
+
+            const ctx = document.getElementById('donutChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: parties.map(p => p.name),
+                    datasets: [{
+                        data: parties.map(p => p.votes),
+                        backgroundColor: parties.map(p => p.color),
+                        borderWidth: 2,
+                        borderColor: '#ffffff',
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    cutout: '60%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (ctx) {
+                                    const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                                    const pct = ((ctx.parsed / total) * 100).toFixed(2);
+                                    return `${ctx.label}: ${ctx.parsed.toLocaleString('id-ID')} suara (${pct}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Build legend
+            const legend = document.getElementById('chartLegend');
+            parties.forEach(p => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = `<span class="legend-dot" style="background:${p.color}"></span><span>${p.name}</span>`;
+                legend.appendChild(item);
+            });
+        });
+    </script>
+</body>
+</html>
