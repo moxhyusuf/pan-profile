@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Spesifikasi Gen - Partai Amanat Nasional</title>
+    <meta name="description" content="Spesifikasi Generasi Muda (Spesifikasi Gen) DPD PAN Probolinggo.">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+        .page-title { background-color:#0154a2; padding:40px 0; color:#fff; }
+        .breadcrumbs a { color:rgba(255,255,255,0.8); text-decoration:none; }
+        .breadcrumbs a:hover { color:#fff; }
+
+        /* Tentang */
+        .tentang-box { background:#fff; border-radius:15px; padding:30px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; border-left:5px solid #0154a2; margin-bottom:40px; }
+        .tentang-box h2 { color:#04415f; font-weight:700; font-size:24px; margin-bottom:15px; }
+        .tentang-box p { font-size:15px; color:rgba(1,6,8,0.7); line-height:1.6; }
+        .tentang-box .visi { background:rgba(1,84,162,0.05); padding:15px 20px; border-radius:10px; margin-top:20px; border-left:3px solid #0154a2; }
+        .tentang-box .visi strong { color:#0154a2; }
+
+        /* Pengurus */
+        .pengurus-card { background:#fff; border-radius:15px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; display:flex; align-items:center; gap:20px; padding:20px; transition:all 500ms ease; height:100%; }
+        .pengurus-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
+        .pengurus-card img { width:90px; height:90px; border-radius:50%; object-fit:cover; border:3px solid rgba(1,84,162,0.1); }
+        .pengurus-info h4 { font-size:18px; font-weight:700; color:#04415f; margin-bottom:4px; }
+        .pengurus-info .jabatan { color:#0154a2; font-weight:600; font-size:13.5px; margin-bottom:6px; }
+        .pengurus-info .bidang { font-size:13px; color:rgba(1,6,8,0.6); }
+
+        /* Divisi / Bidang */
+        .divisi-card { background:#fff; border-radius:15px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; padding:25px; transition:all 500ms ease; height:100%; }
+        .divisi-card:hover { transform:translateY(-5px); box-shadow:rgba(0,0,0,0.1) 0px 15px 40px; }
+        .divisi-icon { width:50px; height:50px; background:rgba(1,84,162,0.1); color:#0154a2; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:15px; }
+        .divisi-card h4 { font-size:18px; font-weight:700; color:#04415f; margin-bottom:10px; }
+        .divisi-card .ketua { font-size:13px; font-weight:600; color:#0154a2; margin-bottom:10px; display:inline-block; background:rgba(1,84,162,0.05); padding:4px 10px; border-radius:20px; }
+        .divisi-card p { font-size:14px; color:rgba(1,6,8,0.65); margin-bottom:0; line-height:1.5; }
+
+        /* Kegiatan */
+        .keg-list { list-style:none; padding:0; margin:0; }
+        .keg-item { background:#fff; border-radius:15px; padding:20px 25px; box-shadow:rgba(0,0,0,0.06) 0px 10px 30px; margin-bottom:15px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; transition:all 300ms ease; }
+        .keg-item:hover { border-left:4px solid #0154a2; padding-left:21px; }
+        .keg-info h5 { font-size:16px; font-weight:700; color:#04415f; margin-bottom:6px; }
+        .keg-info span { font-size:13.5px; color:rgba(1,6,8,0.6); display:flex; align-items:center; gap:8px; }
+        .badge-keg { padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600; white-space:nowrap; }
+        .bg-selesai { background:#d1fae5; color:#065f46; }
+        .bg-jalan { background:#dbeafe; color:#1e40af; }
+        .bg-nanti { background:#fef3c7; color:#92400e; }
+
+        /* CTA */
+        .cta-box { background:linear-gradient(135deg, #0154a2, #04415f); border-radius:20px; padding:40px; text-align:center; color:#fff; margin-top:50px; box-shadow:rgba(1,84,162,0.3) 0px 15px 40px; }
+        .cta-box h3 { font-size:28px; font-weight:700; margin-bottom:15px; }
+        .cta-box p { font-size:16px; opacity:0.9; margin-bottom:25px; max-width:600px; margin-left:auto; margin-right:auto; }
+        .btn-wa { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; font-weight:600; padding:12px 25px; border-radius:30px; text-decoration:none; transition:all 300ms ease; }
+        .btn-wa:hover { background:#128C7E; color:#fff; transform:translateY(-3px); }
+        .btn-wa i { font-size:20px; }
+        
+        @media(max-width:768px) {
+            .pengurus-card { flex-direction:column; text-align:center; }
+        }
+    </style>
+</head>
+<body class="page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+            <a href="index.html" class="logo d-flex align-items-center me-auto"><img src="assets/img/pan2.svg" alt=""></a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="visimisi.html">Visi &amp; Misi</a></li>
+                            <li><a href="fraksi.html">Fraksi PAN</a></li>
+                            <li><a href="kontak.html">Kontak Kami</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program Kegiatan</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li class="dropdown"><a href="#"><span>Data Pemilihan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="perolehan-suara.html">Perolehan Suara</a></li>
+                            <li><a href="quick-count.html">Quick Count</a></li>
+                            <li><a href="sebaran-tps.html">Sebaran Daerah (TPS Probolinggo)</a></li>
+                            <li><a href="evaluasi-program.html">Evaluasi Program</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="active"><span>Struktur Relawan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="struktur-relawan.html">Kordes, Korcam, &amp; Korkab</a></li>
+                            <li><a href="spesifikasi-gen.html" class="active">Spesifikasi Gen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="page-title" data-aos="fade">
+            <div class="container">
+                <nav class="breadcrumbs" style="margin-bottom:15px;">
+                    <ol style="list-style:none;padding:0;margin:0;display:flex;gap:10px;">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li style="color:rgba(255,255,255,0.5);">/</li>
+                        <li><a href="#">Struktur Relawan</a></li>
+                        <li style="color:rgba(255,255,255,0.5);">/</li>
+                        <li class="current">Spesifikasi Gen</li>
+                    </ol>
+                </nav>
+                <h1 style="margin:0;font-size:32px;font-weight:700;color:white;">Spesifikasi Generasi Muda PAN</h1>
+            </div>
+        </div>
+
+        <section class="section light-background">
+            <div class="container" data-aos="fade-up">
+
+                <!-- Tentang -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="tentang-box">
+                            <h2>Tentang Spesifikasi Gen</h2>
+                            <p>Spesifikasi Generasi Muda PAN (Spesifikasi Gen) adalah organisasi sayap kepemudaan yang berfokus pada pengembangan kapasitas, kreativitas, dan partisipasi politik generasi milenial dan Gen Z di Kabupaten Probolinggo. Kami hadir sebagai wadah aspirasi pemuda yang progresif, inklusif, dan berorientasi pada karya nyata.</p>
+                            <div class="visi">
+                                <strong>Visi Gerakan:</strong><br>
+                                Mencetak kader muda yang melek politik, mandiri secara ekonomi, dan peduli terhadap isu-isu sosial masyarakat di era digital.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengurus Inti -->
+                <div class="section-title"><h2>Pengurus Inti</h2><p>Pimpinan Spesifikasi Gen DPD PAN Kabupaten Probolinggo</p></div>
+                <div class="row gy-4 mb-5">
+                    <div class="col-lg-6"><div class="pengurus-card">
+                        <img src="assets/img/dummy.jpg" alt="Ketua">
+                        <div class="pengurus-info"><h4>Dimas Bayu Pamungkas</h4><div class="jabatan">Ketua Umum</div><div class="bidang">Koodinator Umum &amp; Strategi Gerakan</div></div>
+                    </div></div>
+                    <div class="col-lg-6"><div class="pengurus-card">
+                        <img src="assets/img/dummy.jpg" alt="Wakil">
+                        <div class="pengurus-info"><h4>Siti Nurhaliza</h4><div class="jabatan">Wakil Ketua</div><div class="bidang">Pengawasan &amp; Pengembangan Program</div></div>
+                    </div></div>
+                    <div class="col-lg-6"><div class="pengurus-card">
+                        <img src="assets/img/dummy.jpg" alt="Sekretaris">
+                        <div class="pengurus-info"><h4>Rizky Aditya</h4><div class="jabatan">Sekretaris</div><div class="bidang">Administrasi &amp; Komunikasi Internal</div></div>
+                    </div></div>
+                    <div class="col-lg-6"><div class="pengurus-card">
+                        <img src="assets/img/dummy.jpg" alt="Bendahara">
+                        <div class="pengurus-info"><h4>Ayu Lestari</h4><div class="jabatan">Bendahara</div><div class="bidang">Manajemen Keuangan Organisasi</div></div>
+                    </div></div>
+                </div>
+
+                <!-- Divisi / Bidang -->
+                <div class="section-title"><h2>Divisi &amp; Bidang Gerakan</h2><p>Fokus area kerja Spesifikasi Gen PAN Probolinggo</p></div>
+                <div class="row gy-4 mb-5">
+                    <div class="col-lg-3 col-md-6"><div class="divisi-card">
+                        <div class="divisi-icon"><i class="bi bi-bank"></i></div>
+                        <h4>Bidang Politik</h4>
+                        <span class="ketua">Koor: M. Ilham</span>
+                        <p>Fokus pada edukasi politik pemuda, diskusi isu daerah, dan pengawalan kebijakan publik.</p>
+                    </div></div>
+                    <div class="col-lg-3 col-md-6"><div class="divisi-card">
+                        <div class="divisi-icon"><i class="bi bi-people"></i></div>
+                        <h4>Bidang Sosial</h4>
+                        <span class="ketua">Koor: Fitriani</span>
+                        <p>Menggerakkan aksi kemanusiaan, bakti sosial, dan kepedulian lingkungan di masyarakat.</p>
+                    </div></div>
+                    <div class="col-lg-3 col-md-6"><div class="divisi-card">
+                        <div class="divisi-icon"><i class="bi bi-laptop"></i></div>
+                        <h4>Digital &amp; Media</h4>
+                        <span class="ketua">Koor: Diki Wahyudi</span>
+                        <p>Manajemen media sosial, pembuatan konten kreatif, dan kampanye digital partai.</p>
+                    </div></div>
+                    <div class="col-lg-3 col-md-6"><div class="divisi-card">
+                        <div class="divisi-icon"><i class="bi bi-shop"></i></div>
+                        <h4>Ekonomi Kreatif</h4>
+                        <span class="ketua">Koor: Anisa Putri</span>
+                        <p>Pemberdayaan UMKM pemuda, pelatihan kewirausahaan, dan inkubasi bisnis kreatif.</p>
+                    </div></div>
+                </div>
+
+                <!-- Kegiatan Unggulan -->
+                <div class="section-title"><h2>Kegiatan Unggulan</h2><p>Program kerja yang dijalankan oleh Spesifikasi Gen</p></div>
+                <div class="row mb-5"><div class="col-12">
+                    <ul class="keg-list">
+                        <li class="keg-item">
+                            <div class="keg-info">
+                                <h5>Pelatihan Digital Marketing untuk UMKM Pemuda</h5>
+                                <span><i class="bi bi-calendar-event"></i> 15 Mei 2024 &bull; <i class="bi bi-geo-alt"></i> Aula DPD PAN Probolinggo</span>
+                            </div>
+                            <div class="badge-keg bg-selesai">Selesai</div>
+                        </li>
+                        <li class="keg-item">
+                            <div class="keg-info">
+                                <h5>Baksos Generasi Muda: Bagi Sembako &amp; Santunan</h5>
+                                <span><i class="bi bi-calendar-event"></i> 28 April 2024 &bull; <i class="bi bi-geo-alt"></i> Kec. Dringu &amp; Gending</span>
+                            </div>
+                            <div class="badge-keg bg-selesai">Selesai</div>
+                        </li>
+                        <li class="keg-item">
+                            <div class="keg-info">
+                                <h5>Forum Diskusi Pemuda "Peran Gen Z di Pilkada"</h5>
+                                <span><i class="bi bi-calendar-event"></i> Setiap Akhir Pekan (Mei-Juni 2024) &bull; <i class="bi bi-geo-alt"></i> Berbagai Kafe di Kraksaan</span>
+                            </div>
+                            <div class="badge-keg bg-jalan">Berlangsung</div>
+                        </li>
+                        <li class="keg-item">
+                            <div class="keg-info">
+                                <h5>Turnamen E-Sports Mobile Legends Spesifikasi Gen Cup</h5>
+                                <span><i class="bi bi-calendar-event"></i> 20-21 Juli 2024 &bull; <i class="bi bi-geo-alt"></i> GOR Probolinggo</span>
+                            </div>
+                            <div class="badge-keg bg-nanti">Mendatang</div>
+                        </li>
+                        <li class="keg-item">
+                            <div class="keg-info">
+                                <h5>Sekolah Kader Politik Muda PAN Angkatan I</h5>
+                                <span><i class="bi bi-calendar-event"></i> Agustus 2024 &bull; <i class="bi bi-geo-alt"></i> Hotel Bromo View</span>
+                            </div>
+                            <div class="badge-keg bg-nanti">Mendatang</div>
+                        </li>
+                    </ul>
+                </div></div>
+
+                <!-- CTA Bergabung -->
+                <div class="row"><div class="col-12">
+                    <div class="cta-box">
+                        <h3>Muda, Beda, dan Berkarya!</h3>
+                        <p>Mari bergabung bersama Spesifikasi Gen PAN Probolinggo. Jadilah bagian dari perubahan, salurkan ide kreatifmu, dan bangun jaringan kepemudaan yang solid bersama kami.</p>
+                        <a href="https://wa.me/6281200000000" target="_blank" class="btn-wa"><i class="bi bi-whatsapp"></i> Hubungi Admin Rekrutmen</a>
+                    </div>
+                </div></div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer position-relative dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center"><span class="sitename">DPD PAN PROBOLINGGO</span></a>
+                    <div class="footer-contact pt-3"><p>Jl. Raya Panglima Sudirman No. XX</p><p>Kota Probolinggo, Jawa Timur</p><p class="mt-3"><strong>Phone:</strong> <span>+62 812 XXXX XXXX</span></p><p><strong>Email:</strong> <span>dpdpanprobolinggo@email.com</span></p></div>
+                    <div class="social-links d-flex mt-4"><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-youtube"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Navigasi</h4><ul><li><a href="index.html">Beranda</a></li><li><a href="visimisi.html">Visi &amp; Misi</a></li><li><a href="berita.html">Berita Terkini</a></li><li><a href="program.html">Program Kegiatan</a></li><li><a href="galeri.html">Galeri</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Data Pemilihan</h4><ul><li><a href="perolehan-suara.html">Perolehan Suara</a></li><li><a href="quick-count.html">Quick Count</a></li><li><a href="sebaran-tps.html">Sebaran TPS</a></li><li><a href="evaluasi-program.html">Evaluasi Program</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Struktur Relawan</h4><ul><li><a href="struktur-relawan.html">Kordes &amp; Korcam</a></li><li><a href="spesifikasi-gen.html">Spesifikasi Gen</a></li><li><a href="fraksi.html">Fraksi PAN</a></li></ul></div>
+                <div class="col-lg-2 col-md-3 footer-links"><h4>Layanan</h4><ul><li><a href="#">Aspirasi Rakyat</a></li><li><a href="#">Pendaftaran Relawan</a></li><li><a href="#">Pusat Bantuan</a></li><li><a href="#">Privasi Data</a></li></ul></div>
+            </div>
+        </div>
+        <div class="container copyright text-center mt-4"><p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Partai Amanat Nasional</strong> <span>All Rights Reserved</span></p><div class="credits">Designed by <a href="https://www.instagram.com/hi.tech.software/" target="_blank">Hi Tech</a></div></div>
+    </footer>
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

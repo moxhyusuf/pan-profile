@@ -22,6 +22,8 @@
 - **`perolehan-suara.html`** — Rekapitulasi suara resmi KPU (Chart.js donut).
 - **`sebaran-tps.html`** — Sebaran TPS, saksi, dan pemantauan per kecamatan.
 - **`evaluasi-program.html`** — Evaluasi dan capaian program kerja (Chart.js bar).
+- **`struktur-relawan.html`** — Kordes, Korcam, Korkab (Tab + Filter JS).
+- **`spesifikasi-gen.html`** — Spesifikasi Generasi Muda PAN, sayap organisasi pemuda.
 - **`assets/css/main.css`** — Base CSS dan deklarasi desain global proyek.
 - **`assets/img/dummy.jpg`** — Aset gambar *placeholder* standar.
 
@@ -56,7 +58,8 @@ Mengacu secara garis besar pada `design.md` dan struktur `index.html`:
 | `perolehan-suara.html` | Rekapitulasi Suara Resmi KPU & Grafik Donut | ✅ Selesai (Menggunakan Chart.js) |
 | `sebaran-tps.html` | Sebaran TPS, Saksi, dan Pemantauan | ✅ Selesai (Vanilla JS Filter) |
 | `evaluasi-program.html` | Evaluasi Program & Grafik Target vs Realisasi | ✅ Selesai (Chart.js) |
-| Struktur Relawan | Kordes, Spesifikasi Gen | ⏳ Belum Dibuat (`oncoming.html`) |
+| `struktur-relawan.html` | Kordes, Korcam, Korkab (Tab + Filter JS) | ✅ Selesai |
+| `spesifikasi-gen.html` | Spesifikasi Gen (Sayap Pemuda PAN) | ✅ Selesai |
 
 ## 6. Aturan untuk Agent
 
